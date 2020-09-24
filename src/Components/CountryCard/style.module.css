@@ -1,0 +1,114 @@
+.defaultWrap {
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    font-size: var(--header);
+    width: 15em;
+}
+
+.tabletWrap {
+    font-size: var(--header);
+    width: 15em;
+    text-align: center;
+}
+
+.mobileWrap {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.tabletWrap img {
+    margin: 0 !important;
+}
+
+.mobileWrap img {
+    margin-top: 2.5em !important;
+}
+
+.header {
+    background-color: var(--purple);
+    font-size: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 1em;
+    padding: 1em;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+
+.countryName p {
+    color: var(--dark-white);
+    font-size: var(--header);
+    font-weight: 900 !important;
+}
+
+.countryFlag {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 5px;
+    font-size: inherit;
+}
+
+.countryFlag img { 
+    margin-top: -.5em;
+}
+
+.statsWrap {
+    font-size: inherit;
+    padding: 2em;
+    text-align: center;
+}
+
+.statsWrap p:nth-child(1) {
+    font-weight: 900;
+    font-size: calc(var(--header) * 2);
+    margin-bottom: .5em;
+}
+
+.statsWrap p:nth-child(2) {
+    color: var(--subHeader-color);
+    font-size: var(--snippet);
+    font-weight: 600;
+}
+
+
+
+/*  BELOW STYLE INCLUDED IN DESKTOP ONLY */
+#belgium, #united-kingdom {
+    margin-left: 2.5em !important;
+}
+
+#israel {
+    width: 20em;
+    -moz-background-size: 250% 250%, 100% 100%;
+    background-size: 250% 250%, 100% 100%;
+    transition: background-position 0s ease;
+    -webkit-transition: background-position 0s ease;
+    -moz-transition: background-position 0s ease;
+    -o-transition: background-position 0s ease;
+    background-position: -500px -120px, 0 0;
+    background-repeat: no-repeat;
+    background-image: -webkit-linear-gradient(
+        top left,
+        rgba(255, 255, 255, 0.2) 0%,
+        rgba(255, 255, 255, 0.2) 37%,
+        rgba(218,165,32, 0.6) 45%,
+        rgba(255, 255, 255, 0.0) 50%
+      );
+}
+
+#israel .header {
+    background-color: var(--blue);
+    height: 1.5em;
+    padding: 1.5em;
+}
+
+#israel:hover{
+    background-position: 0 0, 0 0;
+    transition-duration: 1s;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+
+}

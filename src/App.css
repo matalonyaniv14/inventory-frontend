@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+@import './reset.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat');
+
+#raleway {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: 500;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#montserrat{
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 500;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+:root {
+    --page-title: 48px;
+    --banner-title: 36px;
+    --title: 28px;
+    --header: 18px;
+    --sub-header: 14px;
+    --snippet: 10px;
+    --light-purple:  #A79BAF;
+    --dark-white: #F8F7F3;
+    --orange:  #D56C52;
+    --red:  #B65B62;
+    --black: #27232B;
+    --grey: #BBBBBB;
+    --purple: #736180;
+    --subHeader-color:  #838282;
+    --blue: #445A93;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --success: #1E9E3A;
+    --error: #BD3B45;
 }

@@ -1,0 +1,100 @@
+.defaultWrap {
+    position: fixed;
+    font-size: var(--header);
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    width: 2.5em;
+    background-color: var(--orange);
+    z-index: 99;
+    transition: all .15s ease-out;
+    
+}
+
+.navToggle {
+    position: absolute;
+    top: .2em;
+    left: -1em;
+    right: auto;
+    padding: 1.25em;
+    background-color: var(--dark-white);
+    mix-blend-mode: normal;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* EXPANDED */
+.expandedWrap {
+    width: 15em;
+    box-shadow: -5px 0px 14px 1px rgba(0, 0, 0, 0.25);
+}
+
+.expandedWrapReport {
+    width: 60%;
+    box-shadow: -5px 0px 14px 1px rgba(0, 0, 0, 0.25);
+}
+
+.expandedWrapQoute {
+    width: 90%;
+    box-shadow: -5px 0px 14px 1px rgba(0, 0, 0, 0.25);
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+.ctaButtons div:nth-child(1) {
+    margin-bottom: .5em;
+}
+
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.seperatorCircle {
+    background-color: #FFFFFF;
+    padding: .25em;
+    border-radius: 50%;
+}
+
+/* OPTION CARD */
+
+.optionCard {
+    color: #FFFFFF;
+    font-size: var(--header);
+    padding: 1.5em;
+    width: 40%;
+    margin: 0 auto; 
+    cursor: pointer;
+}
+
+.optionCard p {
+    font-weight: 500 !important;
+    text-align: center;
+    font-size: calc(var(--header) - 5px);
+    line-height: 1;
+}
+
+.optionCard.focused {
+    background-color: #FFFFFF;
+    color: var(--orange) !important;
+    border-radius: 5px;
+}
+
+.contactInfo p {
+    color: #FFFFFF;
+    font-size: calc(var(--header));
+    font-weight: 700 !important;
+
+}
+
+.breadcrumbs {
+    height: 50%;
+}
