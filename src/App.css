@@ -35,3 +35,11 @@
     --success: #1E9E3A;
     --error: #BD3B45;
 }
+
+.algolia-places {
+    /* margin-top: 1em !important; */
+}
+
+#algolia-wrap  label p {
+    margin: .7em 0 !important;
+}

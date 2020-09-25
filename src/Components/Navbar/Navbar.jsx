@@ -53,7 +53,7 @@ const Navbar = ( props ) => {
     const [ active, setActive ] = useState({
         toggle: false,
         report: false,
-        qoute: true
+        qoute: false
     })
 
     const handleClick = ( e ) => {

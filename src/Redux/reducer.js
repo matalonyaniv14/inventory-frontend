@@ -1,7 +1,9 @@
 import { validate } from "../Utils/formValidation";
 
-const USER_INPUT = 'user/input';
-const ADD_USER = 'user/new'
+const USER_INPUT   = 'user/input';
+const ADD_USER     = 'user/new';
+const USER_LOADING = 'user/loading';
+const USER_ERROR   = 'user/error';
 
 
 const defaultState = {   
@@ -15,7 +17,9 @@ const defaultState = {
         moveInDate: '',
         movingCompanyNeeded: false,
         contactMe: false,
-        errors: {}
+        errors: {},
+        status: null,
+        loading: false
 }
 
 
@@ -27,8 +31,22 @@ const reducer = ( state = defaultState, action ) => {
         case ADD_USER: {
             return {
                 ...state,
-                user: action.payload,
-                added: true,
+                ...action.payload,
+                errors: { ...state['errors'] , ...action['payload']['errors']}
+            }
+        }
+        case USER_LOADING: {
+            return {
+                ...state,
+                ...action.payload,
+                errors: { ...state['errors'] , ...action['payload']['errors']},
+            }
+        }
+
+        case USER_ERROR: {
+            return {
+                ...state,
+                errors: {...action.payload }
             }
         }
 

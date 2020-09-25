@@ -1,5 +1,6 @@
 .defaultWrap {
-
+    animation-name: fadeIn;
+    animation-duration: .5s;
 }
 
 .row {
@@ -20,3 +21,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+

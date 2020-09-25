@@ -24,11 +24,9 @@ const Form = ( { children, errors, callback} ) => {
                         <div className={style.errorWrap}>
                             {
                                errors && Object.keys(errors).map( ( error, k ) => {
-                                    const type = errors[error] ? 'success' : 'error';
-
                                         return <FormValidation key={k} 
-                                                               type={type} 
-                                                               text={ toSentenceCase( error ) } 
+                                                               type={errors[error]['type']} 
+                                                               text={ toSentenceCase(errors[error]['message'] )} 
                                                 />
                                     }
                                 )

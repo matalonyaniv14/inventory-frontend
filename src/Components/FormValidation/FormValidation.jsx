@@ -6,15 +6,14 @@ import { faCheck, faTimes} from "@fortawesome/free-solid-svg-icons";
 import style from './style.module.css';
 
 const FormValidation = ( { type, text } ) => {
-    const [ icon, message ] = type === 'success' ? [ faCheck, 'valid'] 
-                                                 : [ faTimes, 'invalid'];
+    const icon = type === 'success' ? faCheck : faTimes;
 
     return (
         <div className={classnames(style.defaultWrap, style[type])}>
             <div className={style.notifySquare}>
                 <FontAwesomeIcon icon={ icon } />
             </div>
-            <p id='montserrat'> {text} is {message} </p>
+            <p id='montserrat'> {text} </p>
         </div>
     );
 }

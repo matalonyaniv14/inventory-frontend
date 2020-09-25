@@ -9,8 +9,8 @@
 }
 
 .notifySquare {
-    min-width: 10%;
-    max-width: 10%;
+    min-width: 7%;
+    max-width: 7%;
     padding: .05em;
     border-radius: 5px;
     text-align: center;
@@ -33,6 +33,7 @@
 
 svg {
     color: white;
+    width: .5em !important;
 }
 
 .success .notifySquare {
@@ -42,3 +43,4 @@ svg {
 .error .notifySquare {
     background-color: var(--error);
 }
+

@@ -12,6 +12,9 @@ export const toSentenceCase = ( str ) =>{
     return str.replace(/([A-Z]+)*([A-Z][a-z])/g, `$1 $2`).toLowerCase();
 }
 
+export const toSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
+
+
 export const toCamelCase = ( str )=> { 
     return str.toLowerCase().trim().split( /[.\-_\s]/g )
         .reduce( ( string, word ) => ( 
@@ -19,8 +22,6 @@ export const toCamelCase = ( str )=> {
         )
     )
 }
-
-
 
 export const regulateIntervalSpeed = ( countRemaining ) => {
     if ( countRemaining < 10 )  return [ 1, 175 ];

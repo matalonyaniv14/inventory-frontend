@@ -4,10 +4,9 @@ import classnames from 'classnames';
 import style from './style.module.css';
 import { toCamelCase } from '../../Utils/utils';
 
-const Input = ( { type = 'text', value, placeholder, name, onChange, inline, block} ) => {
+const Input = ( { type = 'text', value, placeholder, name, onChange, inline, block, autocomplete} ) => {
     return (
-        <div className={classnames(style.defaultWrap, { [style.block]: block,
-                                                        [style.inline]: inline})}>
+        <div className={classnames(style.defaultWrap, { [style.block]: block, [style.inline]: inline})}>
             <label id='montserrat'  htmlFor={name}> 
                 <p> { placeholder } </p>
             </label>
@@ -15,7 +14,9 @@ const Input = ( { type = 'text', value, placeholder, name, onChange, inline, blo
                    name={name}
                    type={type} 
                    value={value} 
-                   onChange={onChange}
+                   onChange={onChange} 
+                   autoComplete={autocomplete}
+                   min={0}
             />
         </div>
     );

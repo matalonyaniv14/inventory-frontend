@@ -6,27 +6,44 @@ import Form from '../../Components/Form/Form';
 import Input from '../../Components/Input/Input';
 import style from './style.module.css';
 import Button from '../../Components/Buttons/Button';
+import NotificationCard from '../../Components/NotificationCard/NotificationCard';
 import BUTTON_TYPES from '../../Components/Buttons/Constants';
+import add from '../../Redux/createUser';
+// import AlgoliaSearch from '../../Utils/algolia';
+import AlgoliaPlaces from 'algolia-places-react';
 
 const mapStateToProps = ( state ) => ( { ...state } )
 
 const mapDispatchToProps = ( dispatch ) => ({
   updateUserField: ( userInput ) => {
-      const { currentTarget: { id, value } } = userInput;
-     dispatch( { type: 'user/input', payload: { [id]: value } } )
+      let { currentTarget: { id, value, type, checked } } = userInput;
+    
+      if ( type === 'tel' ) {
+        value = value.split(/[^0-9]+/).join('')
+      }
+
+      if ( type === 'checkbox' ) {
+          value = checked
+      }
+
+     dispatch({
+        type: 'user/input', 
+        payload: { [id]: value } 
+     }
+    )
   },
   createUser: ( user ) => {
-      dispatch( { type: 'user/new', payload: {...user} } )
+      add(user)
   }
 });
-
-
 
 
 
 const QouteForm = ( props ) => {
     const {
         errors,
+        status,
+        loading, 
         updateUserField, 
         createUser,
         firstName,
@@ -34,7 +51,7 @@ const QouteForm = ( props ) => {
         telephoneNumber,
         emailAddress,
         numberOfBedrooms,
-        tenantName,
+        landlordName,
         propertyAddress,
         moveInDate,
         movingCompanyNeeded,
@@ -44,65 +61,96 @@ const QouteForm = ( props ) => {
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        console.log(props);
-        createUser(props);
+        createUser({
+            ...props,
+            clientType: 'qoute'
+        });
     }
 
 
     return (
-        <div>
+        status === 200 ? <NotificationCard />
+                       : 
             <div className={style.defaultWrap}>
                 <Form callback={handleSubmit} errors={errors} > 
                     <div className={style.row}>
                         <Input value={firstName} 
-                               placeholder={'First Name'} 
-                               name={'firstName'} 
-                               onChange={updateUserField} 
+                                placeholder={'First Name'} 
+                                name={'firstName'} 
+                                onChange={updateUserField} 
                         />
                         <Input value={lastName} 
-                               placeholder={'Last Name'} 
-                               name={'lastName'} 
-                               onChange={updateUserField} 
+                                placeholder={'Last Name'} 
+                                name={'lastName'} 
+                                onChange={updateUserField} 
                         />
                     </div>
                     <div className={style.row}>
                         <Input type='tel'
-                               value={telephoneNumber} 
-                               placeholder={'Telephone Number'}
-                               name={'telephoneNumber'} 
-                               onChange={updateUserField} 
+                                value={telephoneNumber} 
+                                placeholder={'Telephone Number'}
+                                name={'telephoneNumber'} 
+                                onChange={updateUserField} 
                         />
                         <Input value={emailAddress} 
-                               placeholder={'Email Address'} 
-                               name={'emailAddress'} 
-                               onChange={updateUserField} 
+                                placeholder={'Email Address'} 
+                                name={'emailAddress'} 
+                                onChange={updateUserField} 
                         />
                     </div>
                     <div className={style.row}>
                         <Input type='number' 
-                               value={numberOfBedrooms} 
-                               placeholder={'Number of Bedrooms'} 
-                               name={'numberOfBedrooms'} 
-                               onChange={updateUserField}
+                                value={numberOfBedrooms} 
+                                placeholder={'Number of Bedrooms'} 
+                                name={'numberOfBedrooms'} 
+                                onChange={updateUserField}
                         />
-                        <Input value={tenantName} 
-                               placeholder={'Tenant Name'} 
-                               name={'tenantName'} 
-                               onChange={updateUserField} 
+                        <Input value={landlordName} 
+                                placeholder={'Landlord Name'} 
+                                name={'landlordName'} 
+                                onChange={updateUserField} 
                         />
                     </div>
-                    <Input value={propertyAddress} 
-                           placeholder={'Property Address'} 
-                           name={'propertyAddress'} 
-                           onChange={updateUserField} 
-                           block
-                    />
+                    <div id='algolia-wrap'>
+                        <label id='montserrat' htmlFor={'propertyAddress'}> 
+                            <p> Property Address </p>
+                        </label>
+                        <AlgoliaPlaces
+                            id='propertyAddress'
+                            options={{
+                                appId: 'plX599H8JSHS',
+                                apiKey: '530099727c2199d8f2ce4eb1bdd8b6b2',
+                                type: 'address',
+                            }}  
+                            onChange={({ suggestion }) => {
+                                    updateUserField({
+                                            currentTarget: {
+                                                id: 'propertyAddress',
+                                                value: suggestion.value
+                                            }
+                                        }
+                                    )
+                                }
+                            }
+                            onSuggestions={({ query }) => 
+                                ( updateUserField({
+                                        currentTarget: {
+                                            id: 'propertyAddress',
+                                            value: query
+                                            }
+                                        }
+                                    ) 
+                                )
+                            } 
+                            />
+                    </div>
+        
                     <Input type='date' 
-                           value={moveInDate} 
-                           placeholder={'Move In date'} 
-                           name={'moveInDate'} 
-                           onChange={updateUserField} 
-                           block 
+                            value={moveInDate} 
+                            placeholder={'Move In date'} 
+                            name={'moveInDate'} 
+                            onChange={updateUserField} 
+                            block 
                     />
                     <Input  type='checkbox' 
                             value={movingCompanyNeeded}
@@ -122,18 +170,18 @@ const QouteForm = ( props ) => {
                     />
                     <div className={style.submit}>
                         <label htmlFor="submit">
-                            <Button type={BUTTON_TYPES.RED} 
-                                    text='Submit'
+                            <Button type={loading ? BUTTON_TYPES.PROCESSING : BUTTON_TYPES.RED} 
+                                    text={ 'Submit' }
+                                    loading={loading}
                             />
                             <input type="submit" 
-                                   id='submit' 
-                                   style={{display: 'none'}}
+                                    id='submit' 
+                                    style={{display: 'none'}}
                             />
                         </label>
                     </div>
                 </Form>
-            </div>
-        </div>
+            </div> 
     );
 }
 

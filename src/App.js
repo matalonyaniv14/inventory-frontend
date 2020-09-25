@@ -15,6 +15,7 @@ import Form from './Components/Form/Form';
 
 import {connect} from 'react-redux'
 import QouteForm from './Containers/QouteForm/QouteForm';
+import NotificationCard from './Components/NotificationCard/NotificationCard';
 
 const q = [
   {
@@ -99,9 +100,8 @@ function App(props) {
   console.log('PROPS', props);
   return (
     <div className="App">
-
-      <div style={{marginBottom: '200px', width: '60%', backgroundColor: '#D56C52', height: '100vh'}}>
-        <QouteForm />
+      <div style={{width: '50%'}}>
+        <NotificationCard />
       </div>
 
       <Navbar />
