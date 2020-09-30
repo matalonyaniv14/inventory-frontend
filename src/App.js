@@ -97,6 +97,7 @@ function App(props) {
   return (
     <div className="App">
        <Navbar />
+       {/* banner */}
          <div className="banner">
            <div className="bannerLeft">
               <div className="bannerLeftContent">
@@ -111,8 +112,45 @@ function App(props) {
                 </div>
               </div>
            </div>
-           <div className="bannerRight"></div>
+           <div className="bannerRight">
+
+           </div>
          </div>
+         {/* banner */}
+         {/* how-does-this-work */}
+          <div className="hdtw-wrap">
+            <div className="pageTitle">
+              <div className="header">
+                <Text type={types.LARGE} black bold>
+                  Whats The Big Deal ?
+                </Text>
+              </div>
+              <div className="subHeader">
+                <Text type={types.XSMALL} grey bold>
+                  People arent bad, unfortunetly that doesnt mean bad things dont happen.  
+                  These figures provided by Renters.com show what can happen when not properly covered
+                </Text>
+              </div>
+            </div>
+            <div className="percentWrap">
+              <ResponsiveList rows={2}>
+                <ProgressCircle percent={26} message={"Renters that dont receive their security deposit back when they move out"}/>
+                <ProgressCircle percent={36} message={"Percent of those renters received no explantion from their landlord"}/>
+              </ResponsiveList>
+            </div>
+            <div className="hdtwCTA">
+              <div className="hdtwCTAText">
+                <Text type={types.SMALL} black bold>
+                    By not having a valid 3rd party unbiased company do your inventory, 
+                    you risk your security deposit when moving out
+                </Text>
+              </div>
+              <div className="hdtwCTAButton">
+                <Button type={BUTTON_TYPES.RED} text={"Contact Us"} />
+              </div>
+            </div>
+          </div>
+         {/* how-does-this-work */}
        <Footer />
     </div>
   );
