@@ -97,11 +97,22 @@ function App(props) {
   return (
     <div className="App">
        <Navbar />
-          <div className="test">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-          </div>
+         <div className="banner">
+           <div className="bannerLeft">
+              <div className="bannerLeftContent">
+                <div className="contentTitle">
+                  <Text type={types.LARGE} black bold > 
+                    A Property Inventory Ensures Your Financial  Protection
+                  </Text>
+                </div>
+                <div className="contentCTA">
+                  <Button type={BUTTON_TYPES.RED} text={'Secure Yourself Today'}/>
+                  <Button type={BUTTON_TYPES.RED_BORDER} text={'How Does This Work?'}/>
+                </div>
+              </div>
+           </div>
+           <div className="bannerRight"></div>
+         </div>
        <Footer />
     </div>
   );
