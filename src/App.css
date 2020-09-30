@@ -81,8 +81,8 @@
 
 /* banner */
 
-/* how-does-this-work */
-.hdtw-wrap {
+/* whats-the-big-deal */
+.wtbd-wrap {
     width: 50%;
     margin: 0 auto;
     height: auto;
@@ -92,7 +92,7 @@
     align-items: center;
 }
 
-.hdtw-wrap > div {
+.wtbd-wrap > div {
     margin: 2em 0;
 }
 
@@ -111,19 +111,58 @@
     line-height: 2em;
 }
 
-.hdtwCTA {
+.wtbdCTA {
     padding: 1em;
     text-align: center;
 }
 
-.hdtwCTA .hdtwCTAText {
+.wtbdCTA .wtbdCTAText {
     width: 70%;
     margin: 0 auto;
 }
 
-.hdtwCTA .hdtwCTAButton {
+.wtbdCTA .wtbdCTAButton {
     width: 50%;
     margin: 3em auto;
+}
+
+/* whats-the-big-deal */
+
+/* how-does-this-work */
+.hdtwWrap {
+    height: auto;
+    width: 100%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+
+.hdtwWrap .hdtwTitle {
+    text-align: center;
+}
+
+.hdtwWrap .hdtwSteps {
+    margin: 4em 0;
+}
+
+.hdtwWrap .faqSample {
+    height: auto;
+    width: 100%;
+    background-color: var(--dark-white);
+    padding: 3em 0 0em;
+}
+
+/* .hdtwWrap .fawSampleFaq {
+    margin: 3em 0;
+} */
+
+.hdtwWrap .faqModal {
+    width: 40%;
+    margin: 3em auto;
+    /* text-align: center; */
 }
 
 /* how-does-this-work */

@@ -1,5 +1,5 @@
 .stepWrap {
-    font-size: var(--header);
+    font-size: var(--sub-header);
     padding: 5em 3em 4em 3em;
     width: 10em;
     background: #F8F7F3;
@@ -42,7 +42,7 @@
     margin-top: 3em;
     display: flex;
     justify-content: space-evenly;
-    margin-left: 0.8em;
+    margin-left: 0.4em;
 }
 
 .stepSubHeader p {
@@ -60,7 +60,7 @@
 }
 
 .stepContent {
-    font-size: var(--header);
+    font-size: var(--sub-header);
 }
 
 

@@ -117,8 +117,8 @@ function App(props) {
            </div>
          </div>
          {/* banner */}
-         {/* how-does-this-work */}
-          <div className="hdtw-wrap">
+         {/* whats-the-big-deal */}
+          <div className="wtbd-wrap">
             <div className="pageTitle">
               <div className="header">
                 <Text type={types.LARGE} black bold>
@@ -138,15 +138,49 @@ function App(props) {
                 <ProgressCircle percent={36} message={"Percent of those renters received no explantion from their landlord"}/>
               </ResponsiveList>
             </div>
-            <div className="hdtwCTA">
-              <div className="hdtwCTAText">
+            <div className="wtbdCTA">
+              <div className="wtbdCTAText">
                 <Text type={types.SMALL} black bold>
                     By not having a valid 3rd party unbiased company do your inventory, 
                     you risk your security deposit when moving out
                 </Text>
               </div>
-              <div className="hdtwCTAButton">
+              <div className="wtbdCTAButton">
                 <Button type={BUTTON_TYPES.RED} text={"Contact Us"} />
+              </div>
+            </div>
+          </div>
+         {/* whats-the-big-deal */}
+         {/* how-does-this-work */}
+          <div className="hdtwWrap">
+            <div>
+              <div className="hdtwTitle">
+                <Text type={types.LARGE} block bold>
+                  How Does This Work?
+                </Text>
+              </div>
+              <div className="hdtwSteps">
+                <ResponsiveList rows={3} items={steps} render={ ( data, key ) => {
+                    return <StepCard  key={key} id={key} {...data} />
+                  }}
+                />
+              </div>
+            </div>
+            <div className="faqSample">
+              <div className="faqSampleFaq">
+                <ResponsiveList  rows={2} items={q} render={ (data, key) => {
+                    if ( key > 3 ) return;
+                    return <Faq key={key} {...data}/>
+                  }} 
+                />
+              </div>
+              <div className="faqModal">
+                <Modal initiatorText={"View All Frequently Asked Questions"} title={"Frequently Asked Questions"}>
+                  <ResponsiveList  rows={2} items={q} render={ (data, key) => {
+                      return <Faq key={key} {...data}/>
+                    }} 
+                  />
+                </Modal>
               </div>
             </div>
           </div>
