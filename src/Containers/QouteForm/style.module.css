@@ -1,14 +1,12 @@
 .defaultWrap {
     animation-name: fadeIn;
-    animation-duration: .5s;
+    animation-duration: 1s;
 }
 
 .row {
     display: flex;
     justify-content: space-between;
 }
-
-
 
 .submit {
     display: flex;

@@ -1,11 +1,10 @@
 .wrap {
     width: 60%;
-    height: 80%;
+    height: 100%;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    /* opacity: 0; */
     transition: all 1s ease-in;
 }
 
@@ -49,6 +48,10 @@
 .mainContent p {
     color: #838282;
     font-weight: 900 !important;
+}
+
+.mainContent p:nth-child(3) {
+    color: black !important;
 }
 
 @keyframes fadeIn {

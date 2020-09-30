@@ -65,13 +65,17 @@ const Navbar = ( props ) => {
 
     
     const { toggle, qoute, report } = active
+    const styles = [
+        style.defaultWrap,
+        {
+            [style.expandedWrap]: toggle,
+            [style.expandedWrapQoute]: qoute,
+            [style.expandedWrapReport]: report
+        }
+    ]
 
     return (
-            <div className={classnames(style.defaultWrap, {
-                                       [style.expandedWrap]: toggle,
-                                       [style.expandedWrapQoute]: qoute,
-                                       [style.expandedWrapReport]: report
-            })}>
+            <div className={classnames(styles)}>
                 <div style={{position: 'relative', height: '100%'}}>
                     <div onClick={handleClick} className={style.navToggle} id='toggle'></div>
 

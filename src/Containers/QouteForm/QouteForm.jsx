@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
+import AlgoliaPlaces from 'algolia-places-react';
+
 
 import Form from '../../Components/Form/Form';
 import Input from '../../Components/Input/Input';
@@ -8,39 +10,22 @@ import style from './style.module.css';
 import Button from '../../Components/Buttons/Button';
 import NotificationCard from '../../Components/NotificationCard/NotificationCard';
 import BUTTON_TYPES from '../../Components/Buttons/Constants';
-import add from '../../Redux/createUser';
-// import AlgoliaSearch from '../../Utils/algolia';
-import AlgoliaPlaces from 'algolia-places-react';
+import createUser, { updateUserField } from '../../Redux/createUser';
+import { qouteSelector } from '../../Redux/reducer';
+
 
 const mapStateToProps = ( state ) => ( { ...state } )
 
 const mapDispatchToProps = ( dispatch ) => ({
-  updateUserField: ( userInput ) => {
-      let { currentTarget: { id, value, type, checked } } = userInput;
-    
-      if ( type === 'tel' ) {
-        value = value.split(/[^0-9]+/).join('')
-      }
-
-      if ( type === 'checkbox' ) {
-          value = checked
-      }
-
-     dispatch({
-        type: 'user/input', 
-        payload: { [id]: value } 
-     }
-    )
-  },
-  createUser: ( user ) => {
-      add(user)
-  }
+  updateUserField,
+  createUser,
 });
 
 
 
 const QouteForm = ( props ) => {
     const {
+        networkError,
         errors,
         status,
         loading, 
@@ -61,12 +46,12 @@ const QouteForm = ( props ) => {
 
     const handleSubmit = ( e ) => {
         e.preventDefault();
-        createUser({
-            ...props,
-            clientType: 'qoute'
-        });
+        createUser({ ...props, clientType: 'qoute'});
     }
 
+    if ( networkError ) {
+        return <h1>ERROR</h1>
+    }
 
     return (
         status === 200 ? <NotificationCard />
@@ -142,7 +127,7 @@ const QouteForm = ( props ) => {
                                     ) 
                                 )
                             } 
-                            />
+                        />
                     </div>
         
                     <Input type='date' 
@@ -170,7 +155,7 @@ const QouteForm = ( props ) => {
                     />
                     <div className={style.submit}>
                         <label htmlFor="submit">
-                            <Button type={loading ? BUTTON_TYPES.PROCESSING : BUTTON_TYPES.RED} 
+                            <Button type={BUTTON_TYPES.RED} 
                                     text={ 'Submit' }
                                     loading={loading}
                             />

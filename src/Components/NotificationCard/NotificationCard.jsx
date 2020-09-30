@@ -15,9 +15,13 @@ const NotificationCard = () => {
                 <div className={style.mainContent}>
                     <p id='montserrat'>
                         Your assigned Inventory Agent will contact you
-                        to confirm your information before arrival. 
-                        For any questions, 
-                        please call +972 (58) - 545 - 4060
+                        to confirm your information before arrival.
+                    </p>
+                    <p id='montserrat'>
+                        For any questions, please call
+                    </p>
+                    <p id='montserrat'>
+                        +972 (58) - 545 - 4060
                     </p>
                 </div>
             </div>

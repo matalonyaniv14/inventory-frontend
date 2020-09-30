@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-// import Form from '../../Components/Form/Form';
+
 import Input from '../Input/Input';
 import style from './style.module.css';
 import Button from '../Buttons/Button';

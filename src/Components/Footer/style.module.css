@@ -1,0 +1,31 @@
+.defaultWrap {
+    width: 100%;
+    height: auto;
+    font-size: var(--header);
+    background-color: var(--dark-white);
+    padding: 2em 1em 1em 0;
+    z-index: 100 !important;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+/* ul li:nth-child(1) p {
+    color: black !important;
+    font-size: var(--header) !important;
+    font-weight: 800;
+} */
+
+ul {
+    list-style: none;
+    line-height: 3;
+}
+
+ul li {
+    color: grey;
+    margin: 1em 0;
+}

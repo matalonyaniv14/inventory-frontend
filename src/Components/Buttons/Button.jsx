@@ -17,23 +17,21 @@ const BUTTONS = {
 
 const Button = ( { text, type, loading, block } ) => {
     const [ _type, setType ] = useState(BUTTONS[type]);
-    
-    const handleClick = _ =>{ 
-        console.log(loading)
-        loading && setType(BUTTONS[BUTTON_TYPES.PROCESSING])
-    }
+    const styles = [
+        {[style.block]: block, [style.loading]: loading}, 
+        style.defaultWrap,
+         _type
+    ]
 
     useEffect( () => {
         loading ? setType(BUTTONS[BUTTON_TYPES.PROCESSING])
                 : setType(BUTTONS[type])
     }, [loading])
 
+
+
     return (
-            <div onClick={handleClick} className={classnames(style.defaultWrap,
-                                                             _type, { 
-                                                            [style.block]: block ,
-                                                            [style.loading]: loading
-                                                            })}>
+            <div className={classnames(styles)}>
                 <p id='montserrat' className={style.text}>
                     { loading ? 'Processing' : text }
                 </p>

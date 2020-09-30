@@ -1,3 +1,7 @@
+const SENTENCE_REGEX = /([A-Z]+)*([A-Z][a-z])/g;
+const WORD_REGEX = /[A-Z]/g;
+const SNAKE_CASE_REGEX = /[.\-_\s]/g;
+
 export const formatID = ( id ) => id.toLowerCase().split(' ').join('-');
 
 export const formatRowStyle =  ( rowCount ) => { 
@@ -9,18 +13,25 @@ export const formatPlurality = ( str, count ) =>{
 }
 
 export const toSentenceCase = ( str ) =>{ 
-    return str.replace(/([A-Z]+)*([A-Z][a-z])/g, `$1 $2`).toLowerCase();
+    return str.replace(SENTENCE_REGEX, `$1 $2`).toLowerCase();
 }
 
-export const toSnakeCase = str => str.replace(/[A-Z]/g, letter => `_${letter.toLowerCase()}`);
+export const toSnakeCase = str => str.replace( WORD_REGEX , letter => `_${letter.toLowerCase()}`);
 
 
 export const toCamelCase = ( str )=> { 
-    return str.toLowerCase().trim().split( /[.\-_\s]/g )
+    return str.toLowerCase().trim().split( SNAKE_CASE_REGEX )
         .reduce( ( string, word ) => ( 
             string + word[0].toUpperCase() + word.slice(1)
         )
     )
+}
+
+export const keysToSnakeCase = ( object ) => {
+    return Object.keys(object).reduce( ( acc, c ) => {
+        acc[toSnakeCase(c)] = object[c]
+        return acc;
+    }, {})
 }
 
 export const regulateIntervalSpeed = ( countRemaining ) => {

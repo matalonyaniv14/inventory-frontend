@@ -1,0 +1,37 @@
+.xSmall p {
+    font-size: var(--snippet) !important;
+}
+
+.small p {
+    font-size: var(--sub-header) !important;
+}
+
+.medium p {
+    font-size: var(--header);
+}
+
+.large p {
+    font-size: var(--title);
+}
+
+.xLarge p {
+    font-size: var(--page-title);
+}
+
+.black {
+    color: black !important;
+}
+
+.white {
+    color: white !important;
+}
+
+.grey {
+    color: var(--subHeader-color) !important;
+}
+
+.bold p {
+    font-weight: 900 !important;
+}
+
+

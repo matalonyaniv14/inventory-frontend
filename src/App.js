@@ -16,6 +16,10 @@ import Form from './Components/Form/Form';
 import {connect} from 'react-redux'
 import QouteForm from './Containers/QouteForm/QouteForm';
 import NotificationCard from './Components/NotificationCard/NotificationCard';
+import ProgressCircle from './Components/ProgressCircle/ProgressCircle';
+import Footer from './Components/Footer/Footer';
+import Text from './Components/Text/Text';
+import types from './Components/Text/Constants';
 
 const q = [
   {
@@ -87,62 +91,20 @@ const reviews = [
   }
 ]
 
-const mapStateToProps = ( state ) => ( { user: state.user } )
-const mapDispatchToProps = ( dispatch ) => ({
-  setUser: ( user ) => {
-    dispatch( { type: 'user/new', payload: user } )
-  }
-});
 
 
 function App(props) {
-
-  console.log('PROPS', props);
   return (
     <div className="App">
-      <div style={{width: '50%'}}>
-        <NotificationCard />
-      </div>
-
-      <Navbar />
-      <div style={{margin: '50px'}}>
-          <ResponsiveList items={reviews} rows={1} render={ ( r, k ) => {
-            return <Review key={k} { ...r }/>
-          } }/>
-      </div>
-      <div style={{marginBottom: '10px'}}>
-     
-      <ResponsiveList  items={countryList} rows={3} render={ ( c, k) => {
-        return <CountryCard key={k} { ...c }/>
-      } } />
-      </div>
-
-         <Modal title='Frequently Asked Questions'>
-            <ResponsiveList items={q} rows={2} render={ ( q, k ) => 
-                <Faq key={k} {...q} /> } 
-              />
-         </Modal>
-     
-      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
-
-       {
-         Object.keys(BUTTON_TYPES)
-            .map( ( k ) => (
-                <Button key={k} text={k} type={BUTTON_TYPES[k]} />
-            ))
-       }
-      </div>
-
-        <ResponsiveList rows={3} items={steps} render={ ( item, k ) => (
-            <StepCard  key={k} id={k} { ...item } />
-        ) } />
-     
-       <ResponsiveList items={q} render={ ( item, k ) => ( 
-              <Faq key={k} { ...item }/>
-        )} 
-       />
+       <Navbar />
+          <div className="test">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+          </div>
+       <Footer />
     </div>
   );
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
