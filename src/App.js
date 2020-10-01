@@ -107,8 +107,14 @@ function App(props) {
                   </Text>
                 </div>
                 <div className="contentCTA">
-                  <Button type={BUTTON_TYPES.RED} text={'Secure Yourself Today'}/>
-                  <Button type={BUTTON_TYPES.RED_BORDER} text={'How Does This Work?'}/>
+                  <Button 
+                    type={BUTTON_TYPES.RED} 
+                    text={'Secure Yourself Today'}
+                  />
+                  <Button 
+                    type={BUTTON_TYPES.RED_BORDER} 
+                    text={'How Does This Work?'}
+                  />
                 </div>
               </div>
            </div>
@@ -134,8 +140,14 @@ function App(props) {
             </div>
             <div className="percentWrap">
               <ResponsiveList rows={2}>
-                <ProgressCircle percent={26} message={"Renters that dont receive their security deposit back when they move out"}/>
-                <ProgressCircle percent={36} message={"Percent of those renters received no explantion from their landlord"}/>
+                <ProgressCircle 
+                  percent={26} 
+                  message={"Renters that dont receive their security deposit back when they move out"}
+                />
+                <ProgressCircle 
+                  percent={36} 
+                  message={"Percent of those renters received no explantion from their landlord"}
+                />
               </ResponsiveList>
             </div>
             <div className="wtbdCTA">
@@ -146,7 +158,10 @@ function App(props) {
                 </Text>
               </div>
               <div className="wtbdCTAButton">
-                <Button type={BUTTON_TYPES.RED} text={"Contact Us"} />
+                <Button 
+                  type={BUTTON_TYPES.RED} 
+                  text={"Contact Us"} 
+                />
               </div>
             </div>
           </div>
@@ -160,26 +175,34 @@ function App(props) {
                 </Text>
               </div>
               <div className="hdtwSteps">
-                <ResponsiveList rows={3} items={steps} render={ ( data, key ) => {
-                    return <StepCard  key={key} id={key} {...data} />
-                  }}
+                <ResponsiveList 
+                  rows={3} 
+                  items={steps} 
+                  render={ ( data, key ) => <StepCard key={key} id={key} {...data} /> }
                 />
               </div>
             </div>
             <div className="faqSample">
               <div className="faqSampleFaq">
-                <ResponsiveList  rows={2} items={q} render={ (data, key) => {
+                <ResponsiveList  
+                  rows={2} 
+                  items={q} 
+                  render={ (data, key) => {
                     if ( key > 3 ) return;
                     return <Faq key={key} {...data}/>
                   }} 
                 />
               </div>
               <div className="faqModal">
-                <Modal initiatorText={"View All Frequently Asked Questions"} title={"Frequently Asked Questions"}>
-                  <ResponsiveList  rows={2} items={q} render={ (data, key) => {
-                      return <Faq key={key} {...data}/>
-                    }} 
-                  />
+                <Modal 
+                  initiatorText={"View All Frequently Asked Questions"} 
+                  title={"Frequently Asked Questions"}
+                  >
+                    <ResponsiveList  
+                      rows={2} 
+                      items={q} 
+                      render={ (data, key) => <Faq key={key} {...data}/> } 
+                    />
                 </Modal>
               </div>
             </div>
