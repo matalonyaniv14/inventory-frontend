@@ -132,13 +132,10 @@
 .hdtwWrap {
     height: auto;
     width: 100%;
-    margin: 1em;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    
 }
-
 
 .hdtwWrap .hdtwTitle {
     text-align: center;
@@ -166,3 +163,81 @@
 }
 
 /* how-does-this-work */
+
+/* what-will-my-report-include */
+.wwmriWrap .banner {
+    height: auto !important;
+}
+
+.wwmriWrap .banner .bannerLeft {
+    background-color: #FFFFFF !important;
+}
+
+.wwmriWrap .wwmriBannerLeftContent {
+    padding: 1em 6em 1em 3em;
+}
+
+.wwmriWrap .wwmriHeader {
+    margin: 2em 0;
+}
+
+.wwmriWrap .wwmriSubHeader {
+    line-height: 2em;
+}
+
+.wwmriList {
+    margin: 2em 0;
+}
+
+.wwmriList ul {
+    line-height: 1.5 !important;
+    list-style: none !important;
+}
+
+.wwmriList li {
+    display: flex;
+}
+
+.wwmriList .listTitleUl ul, li  {
+    margin: .8em 0 !important;
+}
+
+.wwmriList ul li::before {
+    content: "\2022";
+    color: var(--orange);
+    font-weight: 900;
+    padding-right: 1em;
+}
+
+.wwmriList .listTitleul {
+    margin: 2em 0;
+}
+
+.bannerRight .wwmriBannerRightContentWrap {
+    height: 90%;
+    margin: 2em 4em;
+    display: flex;
+    flex-direction: column; 
+}
+
+.wwmriExampleReport {
+    flex-grow: 1;
+    background: #F8F7F3;
+    border-radius: 5px;
+    margin: 1em 0;
+}
+
+.wwmriRightCTA {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+/* 
+.wwmriCtaWrap {
+    width: 50%;
+} */
+
+
+/* what-will-my-report-include */

@@ -208,6 +208,101 @@ function App(props) {
             </div>
           </div>
          {/* how-does-this-work */}
+         {/* what-will-my-report-include */}
+          <div className="wwmriWrap">
+            <div className="banner">
+              <div className="bannerLeft">
+                <div className="wwmriBannerLeftContent">
+                  <div className="wwmriTitle">
+                    <div className="wwmriHeader">
+                      <Text type={types.LARGE} black bold>
+                        What Will My Report Include?
+                      </Text>
+                    </div>
+                    <div className="wwmriSubHeader">
+                      <Text types={types.XSMALL} grey bold>
+                        Just like with letting agents, you don’t want to use just any 
+                        inventory company or you won’t be guaranteed quality results.
+                      </Text>
+                    </div>
+                  </div>
+                  <div className="wwmriList">
+                    <div className="listTitle">
+                      <Text type={types.SMALL} style={{textDecoration: 'underline'}} black bold>
+                        What our inventories include
+                      </Text>
+                      <div className="listTitleul">
+                        <ul>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              Full names and addresses of the landlord, tenants and letting agents
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              The date when the inventory was conducted and the person who conducted it
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              A thorough list of the interior and exterior, décor/fixtures and fittings
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              The condition of these items
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              Meter readings/serial numbers/key lists
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              Embedded photographs 
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              Any relevant receipts (e.g. end of tenancy cleaning performed before the tenant has moved in)
+                            </Text>
+                          </li>
+                          <li>
+                            <Text type={types.XSMALL} black bold >
+                              Signatures from the landlord and tenant/s including date/s agreeing to the inventory
+                            </Text>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="bannerRight">
+                <div className="wwmriBannerRightContentWrap">
+                  <div className="wwmriRightTitle">
+                    <Text type={types.LARGE} white bold>
+                      Example Inventory Report
+                    </Text>
+                  </div>
+                  <div className="wwmriExampleReport"></div>
+                  <div className="wwmriRightCTA">
+                    <Text type={types.LARGE} white bold>
+                      Let's Get Started
+                    </Text>
+                    <div className="wwmriCtaWrap">
+                      <Button 
+                        type={BUTTON_TYPES.WHITE} 
+                        text={'Get A Qoute'}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+         {/* what-will-my-report-include */}
        <Footer />
     </div>
   );
