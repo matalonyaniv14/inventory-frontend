@@ -231,13 +231,31 @@
     display: flex;
     justify-content: space-between;
 }
-
-
-
-/* 
-.wwmriCtaWrap {
-    width: 50%;
-} */
-
-
 /* what-will-my-report-include */
+
+/* countries */
+.countriesWrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 4em;
+}
+
+.countriesTitle {
+    display: flex;
+    width: 90%;
+    margin: 4em auto;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.countriesHeader {
+    max-width: 35em;
+}
+
+.countriesSubHeader {
+    width: 20em;
+    line-height: 1.5em;
+}
+
+/* countries */

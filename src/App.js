@@ -303,6 +303,30 @@ function App(props) {
             </div>
           </div>
          {/* what-will-my-report-include */}
+         {/* countries */}
+          <div className="countriesWrap">
+            <div className="countriesTitle">
+              <div className="countriesHeader">
+                <Text type={types.LARGE} black bold>
+                  Why Have I Not Heard About This Before?
+                </Text>
+              </div>
+              <div className="countriesSubHeader">
+                <Text type={types.SMALL} grey bold>
+                  We’re not sure! While most countries require an inventory to be done,  
+                  here In israel it seems tenant protection still has a long way to go
+                </Text>
+              </div>
+            </div>
+            <div className="countriesContent">
+              <ResponsiveList 
+                rows={3} 
+                items={countryList} 
+                render={ ( data, key ) => <CountryCard key={key} { ...data } /> }
+              />
+            </div>
+          </div>
+         {/* countries */}
        <Footer />
     </div>
   );

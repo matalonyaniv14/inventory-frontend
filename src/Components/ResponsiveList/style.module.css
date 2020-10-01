@@ -1,7 +1,7 @@
 .faqWrapResponsive {
     display: grid;
     grid-template-columns: auto auto;
-    grid-column-gap: 5em;
+    grid-column-gap: 7em;
     grid-row-gap: 1em;
     justify-content: center;
 }
