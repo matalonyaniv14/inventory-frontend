@@ -46,3 +46,20 @@
 form {
     padding: 3em;
 }
+
+.formContact .formWrap, .formContent {
+    width: auto !important;
+}
+
+.formContact .formContent {
+    height: auto !important;
+}
+
+
+
+@media only screen and (min-width: 1400px) {
+    .defaultWrap {
+        font-size: 24px !important;
+     }     
+}
+   

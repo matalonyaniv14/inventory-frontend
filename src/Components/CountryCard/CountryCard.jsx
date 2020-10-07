@@ -8,6 +8,7 @@ import style from './style.module.css';
 
 const CountryCard = ( { country, flag, companyCount } ) => {
     const [ count, setCount ] = useState(0);
+    const [ animationRendered, setAnimationRendered ] = useState(false)
 
 
     const incrementCount = ( c ) => setCount(count + c);
@@ -17,6 +18,8 @@ const CountryCard = ( { country, flag, companyCount } ) => {
        if ( count < companyCount ) {
            const [ c, speed  ] = regulateIntervalSpeed(companyCount - count)
            window.setTimeout( () =>  incrementCount( c ), speed);
+       } else {
+          window.setTimeout( () => setAnimationRendered(true), 2000 );
        }
     }, [ count ])
 
@@ -40,7 +43,7 @@ const CountryCard = ( { country, flag, companyCount } ) => {
 
 
     return (
-        <div className={style.defaultWrap} id={style[formatID(country)]}>
+        <div className={classnames(style.defaultWrap, {[style.active]: animationRendered})} id={style[formatID(country)]}>
             <div className={style.header}>
                 <div className={style.countryName}>
                     <p id='raleway'>{ country }</p>

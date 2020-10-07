@@ -112,3 +112,11 @@
     color: #736180;
 }
 /* DOCUMENTATION */
+
+
+@media only screen and (min-width: 1400px) {
+    .stepWrap, .stepContent{
+         font-size: 20px !important;
+     }
+ }
+   

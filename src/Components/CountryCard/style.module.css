@@ -93,7 +93,7 @@
     -webkit-transition: background-position 0s ease;
     -moz-transition: background-position 0s ease;
     -o-transition: background-position 0s ease;
-    background-position: -500px -120px, 0 0;
+    background-position: -1000px -120px, 0 0;
     background-repeat: no-repeat;
     background-image: -webkit-linear-gradient(
         top left,
@@ -110,11 +110,32 @@
     padding: 1.5em;
 }
 
-#israel:hover{
+.active {
+    animation: israelActive 1s;
+}
+
+@keyframes israelActive {
+    from {
+        background-position: -500px -120px, 0 0;
+    }
+    to {
+        background-position: 0 0, 0 0;
+    }
+}
+
+/* #israel:hover{
     background-position: 0 0, 0 0;
     transition-duration: 1s;
     -webkit-transition-duration: 1s;
     -moz-transition-duration: 1s;
     -o-transition-duration: 1s;
 
+} */
+
+
+@media only screen and (min-width: 1400px) {
+    .defaultWrap {
+        font-size: 20px !important;
+     }     
 }
+   

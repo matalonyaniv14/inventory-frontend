@@ -13,7 +13,7 @@ const FormValidation = ( { type, text } ) => {
             <div className={style.notifySquare}>
                 <FontAwesomeIcon icon={ icon } />
             </div>
-            <p id='montserrat'> {text} </p>
+            <p className={style.mainText} id='montserrat'> {text} </p>
         </div>
     );
 }

@@ -8,6 +8,10 @@
     transition: all 1s ease-in;
 }
 
+.contact {
+    padding: 2em 0;
+}
+
 .defaultWrap {
     width: 100%;
     height: auto;
@@ -58,4 +62,5 @@
     from {opacity: 0;}
     to {opacity: 1;}
   }
+
 

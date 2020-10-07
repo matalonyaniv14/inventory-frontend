@@ -1,9 +1,9 @@
 import { validate } from "../Utils/formValidation";
 
-const USER_INPUT   = 'user/input';
-const ADD_USER     = 'user/new';
-const USER_LOADING = 'user/loading';
-const USER_ERROR   = 'user/error';
+const USER_INPUT   = 'user/contact/input';
+const ADD_USER     = 'user/contact/new';
+const USER_LOADING = 'user/contact/loading';
+const USER_ERROR   = 'user/contact/error';
 
 
 const defaultState = {   
@@ -11,10 +11,7 @@ const defaultState = {
         lastName: '',
         telephoneNumber: '',
         emailAddress: '',
-        numberOfBedrooms: '',
-        landlordName: '',
         propertyAddress: '',
-        moveInDate: '',
         movingCompanyNeeded: false,
         contactMe: false,
         errors: {},
@@ -37,7 +34,7 @@ export const contactSelector = ( state ) => state.contact;
 
 // reducer
 const reducer = ( state = defaultState, action ) => {
-    console.log(state, action);
+    // console.log(state, action);
     switch ( action.type ) {
         case USER_LOADING:
         case ADD_USER: {

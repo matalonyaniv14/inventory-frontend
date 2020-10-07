@@ -1,21 +1,39 @@
 import React, { useEffect, useState } from 'react';
 
-const useScrollRender = () => {
+import { take } from '../Utils/utils';
+
+const useScrollRender = ( anchors ) => {
     const [ scrolled, setScrolled ] = useState(false);
+    
 
+    const handleIntersection = ( e ) => {
+        const {
+            target: { id },  
+            isIntersecting
+        } = e[0];
 
-    const checkScrolled = ( ref, scrollOn = 0.25 , callback) => {
-        const { height, top } = ref.getBoundingClientRect();
-        const scrollPercentage = -( height * scrollOn );
-
-        if ( top <= scrollPercentage ) {
-            setScrolled( true );
-            callback();
+        if ( isIntersecting ) {
+            setScrolled(id);
         }
-
     }
 
-    return [ scrolled, checkScrolled  ];
+    useEffect( () => {
+        anchors.forEach( ( e ) => {
+            const intersectionObserverOptions = {
+                root: null,
+                threshold: 1
+            };
+            const observer = new IntersectionObserver(
+                handleIntersection, 
+                intersectionObserverOptions
+            );
+
+            observer.observe(take(e));
+        } )
+    }, [] )
+
+    return scrolled;
+
 }
 
 export default useScrollRender;

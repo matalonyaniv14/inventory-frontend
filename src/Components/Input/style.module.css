@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: column;
     line-height: 2.5;
-    width: 10em;
+    width: 45%;
 }
 
 input {
@@ -25,7 +25,9 @@ input[type=checkbox] {
 input[type=checkbox]:checked {
     background-color: var(--orange) !important;
     border: 3px solid var(--dark-white) !important;
+    font-size: inherit;
 }
+
 
 label p {
         font-size: calc(var(--header) - 6px);
@@ -33,7 +35,7 @@ label p {
 }
 
 .block {
-    width: 100%;
+    width: 100% !important;
 }
 
 .inline {
@@ -46,3 +48,12 @@ label p {
     margin: 0.1em 0 0 1em;
 }
 
+@media only screen and (min-width: 1400px) {
+    .defaultWrap {
+        font-size: 20px !important;
+     }
+     input:not([type="checkbox"]){
+        height: 3em !important;
+    }
+}
+   

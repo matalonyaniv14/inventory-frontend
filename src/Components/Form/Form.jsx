@@ -10,30 +10,32 @@ import FormValidation from '../../Components/FormValidation/FormValidation';
 import { toSentenceCase } from '../../Utils/utils';
 
 
-const Form = ( { children, errors, callback} ) => {
+const Form = ( { children, errors, callback, userType } ) => {
     return (
-        <div className={style.defaultWrap}>
+        <div className={classnames(style.defaultWrap, {[style.formContact]: userType === 'contact'})}>
             <div className={style.formContent}>
-                <div className={style.formContainer}>
+                <div className={classnames(style.formContainer, 'container')}>
                     <div className={classnames(style.formWrap)}>
                         <form onSubmit={callback}>
-                            { children }
+                            {children}
                         </form>
                     </div>
-                    <div className={style.errorContainer}>
-                        <div className={style.errorWrap}>
-                            {
-                               errors && Object.keys(errors).map( ( error, k ) => {
-                                        return <FormValidation key={k} 
-                                                               type={errors[error]['type']} 
-                                                               text={ toSentenceCase(errors[error]['message'] )} 
-                                                />
-                                    }
-                                )
-                            }
-                           
+                    {
+                        Object.keys(errors).length > 0 &&
+                        <div className={style.errorContainer}>
+                            <div className={style.errorWrap}>
+                                {
+                                    Object.keys(errors).map((error, k) => {
+                                        return <FormValidation
+                                            key={k}
+                                            type={errors[error]['type']}
+                                            text={toSentenceCase(errors[error]['message'])}
+                                        />
+                                    })
+                                }
+                            </div>
                         </div>
-                    </div>
+                    }
                 </div>
             </div>
         </div>

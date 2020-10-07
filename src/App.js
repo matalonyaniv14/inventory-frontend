@@ -20,8 +20,11 @@ import ProgressCircle from './Components/ProgressCircle/ProgressCircle';
 import Footer from './Components/Footer/Footer';
 import Text from './Components/Text/Text';
 import types from './Components/Text/Constants';
+import ContactForm from './Components/ContactForm/ContactForm';
+import Layout from './Components/Layout/Layout';
+import ScrollByRender from './Components/ScrollByRender/ScrollByRender';
 
-const q = [
+export const q = [
   {
     question: 'Does my landlord need to be present',
     answer: 'No, In order to validate the current status of the rental apartment, out signature along with yours wwill be enough.'
@@ -125,7 +128,7 @@ function App(props) {
          {/* banner */}
          {/* whats-the-big-deal */}
           <div className="wtbd-wrap">
-            <div className="pageTitle">
+            <div id='bigDealAnchor' className="pageTitle">
               <div className="header">
                 <Text type={types.LARGE} black bold>
                   Whats The Big Deal ?
@@ -138,18 +141,20 @@ function App(props) {
                 </Text>
               </div>
             </div>
-            <div className="percentWrap">
-              <ResponsiveList rows={2}>
-                <ProgressCircle 
-                  percent={26} 
-                  message={"Renters that dont receive their security deposit back when they move out"}
-                />
-                <ProgressCircle 
-                  percent={36} 
-                  message={"Percent of those renters received no explantion from their landlord"}
-                />
-              </ResponsiveList>
-            </div>
+            <ScrollByRender>
+              <div className="percentWrap">
+                <ResponsiveList rows={2}>
+                  <ProgressCircle 
+                    percent={26} 
+                    message={"Renters that dont receive their security deposit back when they move out"}
+                  />
+                  <ProgressCircle 
+                    percent={36} 
+                    message={"Percent of those renters received no explantion from their landlord"}
+                  />
+                </ResponsiveList>
+              </div>
+            </ScrollByRender>
             <div className="wtbdCTA">
               <div className="wtbdCTAText">
                 <Text type={types.SMALL} black bold>
@@ -169,7 +174,7 @@ function App(props) {
          {/* how-does-this-work */}
           <div className="hdtwWrap">
             <div>
-              <div className="hdtwTitle">
+              <div id='hdtwAnchor' className="hdtwTitle">
                 <Text type={types.LARGE} block bold>
                   How Does This Work?
                 </Text>
@@ -207,126 +212,149 @@ function App(props) {
               </div>
             </div>
           </div>
+      
          {/* how-does-this-work */}
          {/* what-will-my-report-include */}
+         {/* <Layout> */}
           <div className="wwmriWrap">
-            <div className="banner">
-              <div className="bannerLeft">
-                <div className="wwmriBannerLeftContent">
-                  <div className="wwmriTitle">
-                    <div className="wwmriHeader">
-                      <Text type={types.LARGE} black bold>
-                        What Will My Report Include?
-                      </Text>
+              <div className="banner">
+                <div className="bannerLeft">
+                  <div className="wwmriBannerLeftContent">
+                    <div id='wwmriAnchor' className="wwmriTitle">
+                      <div className="wwmriHeader">
+                        <Text type={types.LARGE} black bold>
+                          What Will My Report Include?
+                        </Text>
+                      </div>
+                      <div className="wwmriSubHeader">
+                        <Text types={types.XSMALL} grey bold>
+                          Just like with letting agents, you don’t want to use just any 
+                          inventory company or you won’t be guaranteed quality results.
+                        </Text>
+                      </div>
                     </div>
-                    <div className="wwmriSubHeader">
-                      <Text types={types.XSMALL} grey bold>
-                        Just like with letting agents, you don’t want to use just any 
-                        inventory company or you won’t be guaranteed quality results.
-                      </Text>
+                    <div className="wwmriList">
+                      <div className="listTitle">
+                        <Text type={types.SMALL} style={{textDecoration: 'underline'}} black bold>
+                          What our inventories include
+                        </Text>
+                        <div className="listTitleul">
+                          <ul>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                Full names and addresses of the landlord, tenants and letting agents
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                The date when the inventory was conducted and the person who conducted it
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                A thorough list of the interior and exterior, décor/fixtures and fittings
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                The condition of these items
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                Meter readings/serial numbers/key lists
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                Embedded photographs 
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                Any relevant receipts (e.g. end of tenancy cleaning performed before the tenant has moved in)
+                              </Text>
+                            </li>
+                            <li>
+                              <Text type={types.XSMALL} black bold >
+                                Signatures from the landlord and tenant/s including date/s agreeing to the inventory
+                              </Text>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <div className="wwmriList">
-                    <div className="listTitle">
-                      <Text type={types.SMALL} style={{textDecoration: 'underline'}} black bold>
-                        What our inventories include
+                </div>
+                <div className="bannerRight">
+                  <div className="wwmriBannerRightContentWrap">
+                    <div className="wwmriRightTitle">
+                      <Text type={types.LARGE} white bold>
+                        Example Inventory Report
                       </Text>
-                      <div className="listTitleul">
-                        <ul>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              Full names and addresses of the landlord, tenants and letting agents
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              The date when the inventory was conducted and the person who conducted it
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              A thorough list of the interior and exterior, décor/fixtures and fittings
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              The condition of these items
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              Meter readings/serial numbers/key lists
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              Embedded photographs 
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              Any relevant receipts (e.g. end of tenancy cleaning performed before the tenant has moved in)
-                            </Text>
-                          </li>
-                          <li>
-                            <Text type={types.XSMALL} black bold >
-                              Signatures from the landlord and tenant/s including date/s agreeing to the inventory
-                            </Text>
-                          </li>
-                        </ul>
+                    </div>
+                    <div className="wwmriExampleReport"></div>
+                    <div className="wwmriRightCTA">
+                      <Text type={types.LARGE} white bold>
+                        Let's Get Started
+                      </Text>
+                      <div className="wwmriCtaWrap">
+                        <Button 
+                          type={BUTTON_TYPES.WHITE} 
+                          text={'Get A Qoute'}
+                        />
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div className="bannerRight">
-                <div className="wwmriBannerRightContentWrap">
-                  <div className="wwmriRightTitle">
-                    <Text type={types.LARGE} white bold>
-                      Example Inventory Report
+            </div>
+         {/* </Layout> */}
+         {/* what-will-my-report-include */}
+         {/* countries */}
+         <Layout>
+          <div className="countriesWrap">
+              <div className="countriesTitle">
+                <div  id='countriesAnchor' className="countriesHeader">
+                  <Text type={types.LARGE} black bold>
+                    Why Have I Not Heard About This Before?
+                  </Text>
+                </div>
+                <div className="countriesSubHeader">
+                  <Text type={types.SMALL} grey bold>
+                    We’re not sure! While most countries require an inventory to be done,  
+                    here In israel it seems tenant protection still has a long way to go
+                  </Text>
+                </div>
+              </div>
+              <div className="countriesContent">
+                <ScrollByRender>
+                  <ResponsiveList 
+                    rows={3} 
+                    items={countryList} 
+                    render={ ( data, key ) => <CountryCard key={key} { ...data } /> }
+                  />
+                </ScrollByRender>
+              </div>
+            </div>
+         </Layout>
+         {/* countries */}
+         {/*  reviews*/}
+   
+            <div className="reviewWrap">
+                  <ContactForm />
+              <div className="reviewRight">
+                <div className="reviews">
+                    <Text types={types.MEDIUM} black bold > 
+                        What The Community Has To Say
                     </Text>
-                  </div>
-                  <div className="wwmriExampleReport"></div>
-                  <div className="wwmriRightCTA">
-                    <Text type={types.LARGE} white bold>
-                      Let's Get Started
-                    </Text>
-                    <div className="wwmriCtaWrap">
-                      <Button 
-                        type={BUTTON_TYPES.WHITE} 
-                        text={'Get A Qoute'}
-                      />
-                    </div>
-                  </div>
+                    <Review author="this author" content="this would be a review, wow what a review"/>
+                    <Review author="this author" content="this would be a review, wow what a review" left/>
+                    <Review author="this author" content="this would be a review, wow what a review"/>
                 </div>
               </div>
             </div>
-          </div>
-         {/* what-will-my-report-include */}
-         {/* countries */}
-          <div className="countriesWrap">
-            <div className="countriesTitle">
-              <div className="countriesHeader">
-                <Text type={types.LARGE} black bold>
-                  Why Have I Not Heard About This Before?
-                </Text>
-              </div>
-              <div className="countriesSubHeader">
-                <Text type={types.SMALL} grey bold>
-                  We’re not sure! While most countries require an inventory to be done,  
-                  here In israel it seems tenant protection still has a long way to go
-                </Text>
-              </div>
-            </div>
-            <div className="countriesContent">
-              <ResponsiveList 
-                rows={3} 
-                items={countryList} 
-                render={ ( data, key ) => <CountryCard key={key} { ...data } /> }
-              />
-            </div>
-          </div>
-         {/* countries */}
+         {/*  reviews*/}
        <Footer />
     </div>
   );

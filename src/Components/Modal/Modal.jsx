@@ -7,7 +7,7 @@ import style from './style.module.css';
 
 const { PURPLE } = BUTTON_TYPES;
 
-const Modal = ( { initiatorText = 'View All', exitText = 'View Less', title, children } ) => {
+const Modal = ( { initiatorText = 'View All', exitText = 'View Less', buttonType=PURPLE, title, children } ) => {
     const [ active, setActive ] = useState(false);
 
     const handleClick = _  => setActive(!active); 
@@ -15,7 +15,7 @@ const Modal = ( { initiatorText = 'View All', exitText = 'View Less', title, chi
     if ( !active ) {
         return (
             <div onClick={handleClick} >
-                <Button text={initiatorText} type={PURPLE} block />
+                <Button text={initiatorText} type={buttonType} block />
             </div>
         );
     }

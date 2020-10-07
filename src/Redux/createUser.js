@@ -1,11 +1,17 @@
 import { store } from '../index';
 import { keysToSnakeCase } from '../Utils/utils';
-import { userLoading, userCreated, userError, userInput } from './reducer';
+import  * as qoute  from './qouteReducer';
+import  * as contact  from './contactReducer';
 
-// const { dispatch } = store;
 const BASE_PATH = 'http://localhost:3000';
 
-export default async ( user ) => {
+export default async ( user, userType ) => {
+    const {
+        userLoading,
+        userCreated,
+        userError
+    } = userType === 'contact' ? contact : qoute; 
+
     store.dispatch( userLoading(true) );
 
     const options = {
@@ -28,7 +34,7 @@ export default async ( user ) => {
     }
 }
 
-export const updateUserField = ( input ) => {
+export const updateUserField = ( input, userType ) => {
     let { currentTarget: { id, value, type, checked } } = input;
     
       if ( type === 'tel' ) {
@@ -38,6 +44,8 @@ export const updateUserField = ( input ) => {
       if ( type === 'checkbox' ) {
           value = checked
       }
+
+      const { userInput } = userType === 'contact' ? contact : qoute; 
 
      store.dispatch(userInput( { [id]: value } ))
 }

@@ -34,4 +34,24 @@
     font-weight: 900 !important;
 }
 
-
+@media only screen  and (min-width : 1400px) {
+    .xSmall p {
+        font-size: 18px !important;
+    }
+    
+    .small p {
+        font-size: 20px !important;
+    }
+    
+    .medium p {
+        font-size: var(--header);
+    }
+    
+    .large p {
+        font-size: 60px;
+    }
+    
+    .xLarge p {
+        font-size: var(--page-title);
+    }
+}

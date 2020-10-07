@@ -3,6 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
+html {
+    scroll-behavior: smooth;
+}
+
 #raleway {
     font-family: Raleway;
     font-style: normal;
@@ -243,8 +247,8 @@
 
 .countriesTitle {
     display: flex;
-    width: 90%;
-    margin: 4em auto;
+    width: 85%;
+    margin: 0 auto 4em auto;
     text-align: left;
     justify-content: space-between;
 }
@@ -259,3 +263,58 @@
 }
 
 /* countries */
+
+/*  reviews*/
+.reviewWrap {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.reviewLeft {
+    min-width: 50%;
+    background-color: var(--orange);
+    transition: all .25s;
+    padding: 3em 0px;
+}
+
+.contactFormTitle {
+    text-align: center;
+}
+
+.reviewRight {
+    min-width: 50%;
+    background-color: #FFFFFF;
+    padding: 5em 0;
+}
+
+.reviewLeft .contactFormWrap {
+    max-width: 100%;
+    height: 100%;
+    margin: 1em 2em;
+}
+
+.reviewLeft .contactFormFooter {
+    text-align: center;
+}
+
+.reviewLeft .contactFormFooter div {
+    margin: 1em;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+/*  reviews*/
+
+
+@media only screen and (min-width: 1400px) {
+    .countriesTitle{
+        width: 75% !important;
+     }     
+}
+   
