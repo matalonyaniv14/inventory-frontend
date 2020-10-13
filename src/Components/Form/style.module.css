@@ -29,7 +29,6 @@
 .errorContainer {
     width: 35%;
     padding: 1em 4em;
-
 }
 
 .errorWrap {
@@ -56,6 +55,11 @@ form {
 }
 
 
+.inputError {
+    border: 4px solid var(--error) !important;
+}
+
+
 
 @media only screen and (min-width: 1400px) {
     .defaultWrap {
@@ -63,3 +67,30 @@ form {
      }     
 }
    
+@media only screen and (max-device-width: 1030px) {
+    .errorContainer {
+        padding: 0 0 0 .5em;
+    }
+}
+
+@media only screen and (max-device-width: 724px) {
+    .defaultWrap {
+        padding: unset !important;
+    }
+
+    form {
+        padding: 1em !important;
+    }
+
+    .formWrap {
+        width: 100% !important;
+    }
+
+    .formContent {
+        height: auto !important;
+        width: auto !important;
+    }
+}
+
+
+

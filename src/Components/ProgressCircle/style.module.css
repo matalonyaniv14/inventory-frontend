@@ -115,3 +115,10 @@
     transform: rotate(160deg);
   }
 } 
+
+@media only screen and (max-device-width: 724px) {
+  .defaultWrap {
+     margin-bottom: 2em;
+  }
+}
+

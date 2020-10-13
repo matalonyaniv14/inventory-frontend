@@ -11,9 +11,9 @@ import Modal from '../Modal/Modal';
 import {q} from '../../App';
 import useScrollRender from '../../Utils/hooks';
 
-const OptionCard = ( { text, focused, anchor, ...rest } ) => (
+const OptionCard = ( { text, focused, anchor, callback, ...rest } ) => (
         <div 
-            onClick={() => ( window.location.href = anchor )} 
+            onClick={() => callback( anchor )} 
             {...rest} 
             className={classnames( style.optionCard,{ [style.focused]: focused } )}
             >
@@ -36,13 +36,17 @@ const Navbar = ( props ) => {
     ];
     const scrolled = useScrollRender(breakpoints);
 
-    const shouldFocus = ( id ) => id === scrolled;
 
     const handleClick = ( e ) => {
         const { currentTarget: { id } } = e;
 
         if ( id )  setActive(  { [id]: !active[id] } );
-    }    
+    }
+
+    const handleOptionsClick = ( anchor ) => {
+        window.location.href = anchor;
+        setActive( { toggle: false, qoute: false } );
+    }
 
 
     const { toggle, qoute } = active
@@ -69,7 +73,7 @@ const Navbar = ( props ) => {
                             </div>
                             <div className={classnames(style.ctaButtons, style.flexColumn)}>
                                 <div onClick={handleClick} id='qoute' className={style.qoute}>
-                                        <Button text='Get A Qoute' type={BUTTON_TYPES.TRANSPARENT}/>
+                                    <Button text='Get A Qoute' type={BUTTON_TYPES.TRANSPARENT}/>
                                 </div>
                                 <Modal 
                                     initiatorText={"FAQ"} 
@@ -85,10 +89,34 @@ const Navbar = ( props ) => {
                             </div>
                             <div className={style.seperatorCircle}></div>
                             <div className={classnames(style.flexColumn, style.breadcrumbs)}>
-                                <OptionCard id={style.big} anchor={'#bigDealAnchor'} text='Whats The Big Deal?' focused={'bigDealAnchor' === scrolled}/>
-                                <OptionCard id={style.work} anchor={'#hdtwAnchor'} text='How Does This Work?' focused={'hdtwAnchor' === scrolled}/>
-                                <OptionCard id={style.report} anchor={'#wwmriAnchor'} text='What Will My Report Incude?' focused={'wwmriAnchor' === scrolled}/>
-                                <OptionCard id={style.heard} anchor={'#countriesAnchor'} text='Why Haven’t I Heard About This Before?' focused={'countriesAnchor' === scrolled}/>
+                                <OptionCard 
+                                    callback={handleOptionsClick}
+                                    id={style.big} 
+                                    anchor={'#bigDealAnchor'} 
+                                    text='Whats The Big Deal?' 
+                                    focused={'bigDealAnchor' === scrolled}
+                                />
+                                <OptionCard 
+                                    callback={handleOptionsClick}
+                                    id={style.work} 
+                                    anchor={'#hdtwAnchor'}
+                                    text='How Does This Work?' 
+                                    focused={'hdtwAnchor' === scrolled}
+                                />
+                                <OptionCard 
+                                    callback={handleOptionsClick}
+                                    id={style.report} 
+                                    anchor={'#wwmriAnchor'} 
+                                    text='What Will My Report Incude?' 
+                                    focused={'wwmriAnchor' === scrolled}
+                                />
+                                <OptionCard 
+                                    callback={handleOptionsClick}
+                                    id={style.heard} 
+                                    anchor={'#countriesAnchor'} 
+                                    text='Why Haven’t I Heard About This Before?' 
+                                    focused={'countriesAnchor' === scrolled}
+                                />
                             </div>
                         </div>  
                         )

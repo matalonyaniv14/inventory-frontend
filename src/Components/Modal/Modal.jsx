@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { take } from '../../Utils/utils';
 
 import Button from '../Buttons/Button';
 import BUTTON_TYPES from '../Buttons/Constants';
@@ -12,6 +14,18 @@ const Modal = ( { initiatorText = 'View All', exitText = 'View Less', buttonType
 
     const handleClick = _  => setActive(!active); 
 
+
+    useEffect( () => {
+        const body = take('body');
+        if ( body ) {
+            body.style.overflow = active ? 'hidden' : ''
+        }
+
+        return () => body.style.overflow = '';
+    }, [ active ])
+
+
+    
     if ( !active ) {
         return (
             <div onClick={handleClick} >
@@ -40,5 +54,6 @@ const Modal = ( { initiatorText = 'View All', exitText = 'View Less', buttonType
         </div>
     );
 }
+// 
 
 export default Modal;

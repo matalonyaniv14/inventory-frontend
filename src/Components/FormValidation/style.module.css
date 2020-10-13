@@ -52,4 +52,19 @@ svg {
         font-size: 16px !important;
     }
 }
+  
+@media only screen and (max-device-width: 1030px) {
+    .defaultWrap {
+        padding: .2em 1em;
+    }
+
+    .notifySquare {
+        padding: 0.05em 0.2em;
+    }
+    .mainText {
+        font-size: 9px !important;
+    }
+}
    
+
+

@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
+
+
 import { take } from '../Utils/utils';
 
 const useScrollRender = ( anchors ) => {

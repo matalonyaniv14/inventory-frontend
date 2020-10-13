@@ -55,3 +55,26 @@
         font-size: var(--page-title);
     }
 }
+
+
+@media only screen and (max-device-width: 724px) {
+    .xSmall p {
+        font-size: 10px !important;
+    }
+    
+    .small p {
+        font-size: 10px !important;
+    }
+    
+    .medium p {
+        font-size: var(--header);
+    }
+    
+    .large p {
+        font-size: 28px;
+    }
+    
+    .xLarge p {
+        font-size: var(--page-title);
+    }
+}

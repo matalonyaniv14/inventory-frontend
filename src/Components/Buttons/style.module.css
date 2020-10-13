@@ -77,3 +77,11 @@
     font-size: 24px;
   }
 }
+
+
+@media only screen and (max-device-width: 724px) {
+  .defaultWrap {
+     font-size: 14px;
+  }
+}
+

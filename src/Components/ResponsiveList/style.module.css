@@ -10,7 +10,7 @@
     .faqWrapResponsive {
         grid-template-columns: auto !important;
     }
-  }
+}
 
   @media only screen and (min-width: 1400px) {
    .large .faqWrapResponsive {

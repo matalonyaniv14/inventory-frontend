@@ -9,7 +9,7 @@
 }
 
 .submit {
-    display: flex;
+    /* display: flex; */
     justify-content: center;
 }
 
@@ -23,11 +23,11 @@
 .formFocused {
     min-width: 90%;
 }
-
+/* 
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
-}
+} */
 
 .defaultWrap .container {
     justify-content: none !important;
@@ -35,3 +35,12 @@
 }
 
 
+@media only screen and (max-device-width: 724px) {
+    .defaultWrap {
+        position: fixed;
+        top: 10%;
+        left: 0 !important;
+        right: 0 !important;
+    }
+}
+   

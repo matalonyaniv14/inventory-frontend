@@ -124,3 +124,47 @@
 }
 
 
+@media only screen and (max-device-width: 1030px) {
+    .optionCard {
+        font-size: 40px
+    }
+
+    .optionCard p {
+        font-size: 20px;
+    }
+
+   .expandedWrap >  .flexColumn p, .contactInfo p  {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-device-width: 724px) {
+    .expandedWrap {
+        width: 90%;
+    }
+    .expandedWrapQoute .navToggle {
+        left: 5px !important;
+    }
+
+    .expandedWrapQoute {
+        min-width: 100% !important;
+    }
+
+    .optionCard {
+        padding: .75em;
+    }
+
+    .optionCard p {
+        font-size: 14px !important;
+    }
+
+    .seperatorCircle {
+        margin: 20px 0;
+    }
+
+    .contactInfo {
+        margin: 1em 0;
+    }
+}
+   
+

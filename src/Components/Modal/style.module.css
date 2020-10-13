@@ -1,6 +1,6 @@
 .defaultWrap {
-    height: 100vh;
-    min-width: 100vh !important;
+    /* height: 100vh; */
+    /* min-width: 100vh !important; */
     font-size: 18px;
     position: fixed;
     top: 0;
@@ -29,9 +29,11 @@
     display: flex;
     justify-content: space-between;
     max-width: 100%;
-    padding: 1.5em 4em;
+    padding: 1.5em 2em;
     box-shadow: 0px 4px 4px 1px #6d656578;
     background: white;
+    text-align: center;
+    height: auto;
 }
 
 .headerText p {
@@ -56,3 +58,41 @@
     scrollbar-width: none; 
 }
 
+
+@media only screen and (max-device-width: 724px) {
+    .defaultWrap .modalContent {
+       height: 100% !important
+    }
+
+    .defaultWrap .shadowOverlay {
+        display: none;
+    }
+
+    .defaultWrap .contentMain {
+        margin: 1em 1em 1em 1em;
+        padding: 0 !important;
+    }
+
+    .defaultWrap .headerText {
+        margin-bottom: .5em;
+    }
+
+    .defaultWrap .headerText p {
+        font-size: 16px;
+    }
+
+    .defaultWrap .modalHeader {
+        flex-direction: column;
+        height: auto;
+        padding-bottom: 2em;
+    }
+
+    .defaultWrap .modalHeader div:nth-child(2) {
+        padding: 0 0 1em 0;
+    }
+
+    .defaultWrap .contentMain > div  {
+        justify-content: unset !important;
+    }
+  }
+  /* // */

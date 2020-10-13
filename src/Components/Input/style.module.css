@@ -12,6 +12,7 @@ input {
     background-color: #FFFFFF !important;
     border-radius: 5px !important;
     height: 2em !important;
+    transition: all .25s;
     /* font-size: inherit; */
 }
 
@@ -41,7 +42,7 @@ label p {
 .inline {
     flex-direction: row-reverse;
     justify-content: flex-end;
-    margin: 1em 0em;
+    margin: .5em 0em;
 }
 
 .inline label {
@@ -56,4 +57,19 @@ label p {
         height: 3em !important;
     }
 }
-   
+
+@media only screen and (max-device-width: 724px) {
+    label p {
+       font-size: 8px !important;
+    }
+
+    input:not([type="checkbox"]){
+        margin: .5em 0;
+    }
+
+    input:not([type="checkbox"]):focus{
+        outline-offset: 0px !important;
+    }
+  }
+  
+  

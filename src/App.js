@@ -23,6 +23,8 @@ import types from './Components/Text/Constants';
 import ContactForm from './Components/ContactForm/ContactForm';
 import Layout from './Components/Layout/Layout';
 import ScrollByRender from './Components/ScrollByRender/ScrollByRender';
+import { isMobile, isTablet } from './Utils/matchDevice';
+import Alert from './Components/Alert/Alert';
 
 export const q = [
   {
@@ -98,10 +100,12 @@ const reviews = [
 
 function App(props) {
   return (
-    <div className="App">
+
+    <div className="App" style={{overflow: 'hidden'}}>
        <Navbar />
        {/* banner */}
          <div className="banner">
+           
            <div className="bannerLeft">
               <div className="bannerLeftContent">
                 <div className="contentTitle">
@@ -227,7 +231,7 @@ function App(props) {
                         </Text>
                       </div>
                       <div className="wwmriSubHeader">
-                        <Text types={types.XSMALL} grey bold>
+                        <Text type={types.SMALL} grey bold>
                           Just like with letting agents, you don’t want to use just any 
                           inventory company or you won’t be guaranteed quality results.
                         </Text>
@@ -285,6 +289,19 @@ function App(props) {
                       </div>
                     </div>
                   </div>
+                  {
+                    isMobile() && (
+                      <div style={{width: '95%', margin: '0 auto'}}>
+                        <Modal
+                          initiatorText='View Example Report'
+                          exitText='Close Report'
+                          title='Example Report'
+                        >
+                          <div className="wwmriExampleReport"></div>
+                        </Modal>
+                      </div>
+                    )
+                  }
                 </div>
                 <div className="bannerRight">
                   <div className="wwmriBannerRightContentWrap">

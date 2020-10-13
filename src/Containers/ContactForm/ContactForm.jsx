@@ -6,6 +6,7 @@ import AlgoliaPlaces from 'algolia-places-react';
 
 import Form from '../../Components/Form/Form';
 import Input from '../../Components/Input/Input';
+import Alert from '../../Components/Alert/Alert';
 import style from './style.module.css';
 import Button from '../../Components/Buttons/Button';
 import NotificationCard from '../../Components/NotificationCard/NotificationCard';
@@ -48,9 +49,7 @@ const ContactForm = ( props ) => {
         createUser({ ...props},userType);
     }
 
-    if ( networkError ) {
-        return <h1>ERROR</h1>
-    }
+  
 
     if ( handleClick && Object.keys(errors).length > 0 ) handleClick();
 
@@ -58,6 +57,7 @@ const ContactForm = ( props ) => {
         status === 200 ? <NotificationCard userType={userType} />
                        : 
             <div className={classnames(style.defaultWrap)} >
+              {  networkError && <Alert message='An error has occurred . . . Make sure you have a valid internet connection and try again.' />}
                 <Form callback={(e) => handleSubmit(e, userType)} errors={errors} userType={userType}> 
                     <div className={style.row}>
                         <Input  required

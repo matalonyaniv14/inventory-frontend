@@ -7,10 +7,27 @@ import style from './style.module.css';
 import Button from '../Buttons/Button';
 import BUTTON_TYPES from '../Buttons/Constants';
 import FormValidation from '../../Components/FormValidation/FormValidation';
-import { toSentenceCase } from '../../Utils/utils';
+import { take, toSentenceCase } from '../../Utils/utils';
+import { useEffect } from 'react';
+import { isMobile, isTablet } from '../../Utils/matchDevice';
 
 
 const Form = ( { children, errors, callback, userType } ) => {
+    useEffect( () => {
+        Object.keys(errors)
+            .forEach( ( error ) => {
+                const elem = take(`input[name="${error}"]`);
+                if ( elem ) {
+                    if ( !errors[error].valid ) {
+                        elem.classList.add( style.inputError );
+                    } else {
+                        elem.classList.remove( style.inputError );
+                    }
+                }
+            }
+        )
+    }, [errors])
+
     return (
         <div className={classnames(style.defaultWrap, {[style.formContact]: userType === 'contact'})}>
             <div className={style.formContent}>
@@ -20,7 +37,7 @@ const Form = ( { children, errors, callback, userType } ) => {
                             {children}
                         </form>
                     </div>
-                    {
+                    { !isTablet() && !isMobile() && (
                         Object.keys(errors).length > 0 &&
                         <div className={style.errorContainer}>
                             <div className={style.errorWrap}>
@@ -35,6 +52,7 @@ const Form = ( { children, errors, callback, userType } ) => {
                                 }
                             </div>
                         </div>
+                        )
                     }
                 </div>
             </div>

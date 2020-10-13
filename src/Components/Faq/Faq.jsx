@@ -21,9 +21,9 @@ const Faq = ( props ) => {
     }, [answerShown])
 
     return (
-        <div className={classnames( style.defaultWrap, content._style )} id='raleway'>
+        <div onClick={handleClick} className={classnames( style.defaultWrap, content._style )} id='raleway'>
             <p> { content.text } </p>
-            <div onClick={handleClick} className={style.questionMarkSquare} >
+            <div className={style.questionMarkSquare} >
                 <p>?</p>
             </div>
         </div>

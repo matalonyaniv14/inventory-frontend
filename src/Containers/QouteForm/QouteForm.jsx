@@ -7,6 +7,7 @@ import AlgoliaPlaces from 'algolia-places-react';
 import Form from '../../Components/Form/Form';
 import Input from '../../Components/Input/Input';
 import style from './style.module.css';
+import Alert from '../../Components/Alert/Alert';
 import Button from '../../Components/Buttons/Button';
 import NotificationCard from '../../Components/NotificationCard/NotificationCard';
 import BUTTON_TYPES from '../../Components/Buttons/Constants';
@@ -51,9 +52,7 @@ const QouteForm = ( props ) => {
         createUser({ ...props, clientType: userType});
     }
 
-    if ( networkError ) {
-        return <h1>ERROR</h1>
-    }
+ 
 
     if ( handleClick && Object.keys(errors).length > 0 ) handleClick();
 
@@ -61,6 +60,7 @@ const QouteForm = ( props ) => {
         status === 200 ? <NotificationCard />
                        : 
             <div className={style.defaultWrap}>
+                 {  networkError && <Alert message='An Error Has Occurred' />}
                 <Form callback={(e) => handleSubmit(e,userType)} errors={errors} userType={userType}> 
                     <div className={style.row}>
                         <Input  required
@@ -93,7 +93,7 @@ const QouteForm = ( props ) => {
                     </div>
                     <div className={style.row}>
                         <Input  required
-                                type='number' 
+                                type='tel' 
                                 value={numberOfBedrooms} 
                                 placeholder={'Number of Bedrooms'} 
                                 name={'numberOfBedrooms'} 

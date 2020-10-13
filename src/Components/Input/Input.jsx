@@ -5,7 +5,7 @@ import style from './style.module.css';
 import { toCamelCase } from '../../Utils/utils';
 
 const Input = ( { type = 'text', value, placeholder, name, onChange, inline, block,  ...rest} ) => {
-    console.log(rest);
+
     const styles = [
         style.defaultWrap,
         {
@@ -25,6 +25,7 @@ const Input = ( { type = 'text', value, placeholder, name, onChange, inline, blo
                    value={value} 
                    onChange={onChange} 
                    min={0}
+                   style={{fontSize: "16px !important"}}
                    {...rest}
             />
         </div>

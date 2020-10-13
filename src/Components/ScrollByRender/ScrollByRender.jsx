@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-
-const ScrollByRender = ( { children, startOn=0.70 } ) => {
+const ScrollByRender = ( { children } ) => {
     const [ scrolled, setScrolled ] = useState(false);
     const childRef = useRef(null);
 

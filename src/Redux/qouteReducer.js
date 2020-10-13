@@ -29,7 +29,7 @@ const defaultState = {
 export const userInput   = ( input )   => ( { type: USER_INPUT, payload: input } )
 export const userLoading = ( loading ) => ( { type: USER_LOADING, payload: { loading } } );
 export const userCreated = ( user )    => ( { type: ADD_USER, payload: { ...user, loading: false } } );
-export const userError   = ( error )   => ( { type: USER_ERROR, payload: { networkError: true, loading: false }  } );
+export const userError   = ( error )   => ( { type: USER_ERROR, payload: { networkError: true }  } );
 
 // selectors 
 export const qouteSelector =   ( state ) => state.qoute;
@@ -51,6 +51,7 @@ const reducer = ( state = defaultState, action ) => {
         case USER_ERROR: {
             return {
                 ...state,
+                loading: false,
                 networkError: {...action.payload }
             }
         }

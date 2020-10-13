@@ -37,3 +37,25 @@
     right: auto !important;
 }
 
+
+/* mediaQueries */
+@media only screen and (max-device-width: 1030px) {
+    .defaultWrap {
+        font-size: 14px;
+        padding: .2em 1em;
+    }
+}
+
+@media only screen and (max-device-width: 724px) {
+    .defaultWrap {
+        margin: 3em 0;
+        padding: 1.5em 2em 0 2em;
+        width: auto;
+    }
+
+    .defaultWrap .content p, .author p {
+        font-size: 14px;
+    }
+}
+   
+
