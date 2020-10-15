@@ -1,14 +1,21 @@
+import 'intersection-observer'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux'
+import {createStore, combineReducers} from 'redux'
 
-import reducer from './Redux/reducer';
+import { qoute, contact } from './Redux/reducers';
 import './index.css';
 import App from './App';
 
 
-export const store = createStore( reducer );
+
+const rootReducer = combineReducers({
+  "qoute": qoute,
+  "contact": contact
+});
+
+export const store = createStore( rootReducer );
 
 
 ReactDOM.render(

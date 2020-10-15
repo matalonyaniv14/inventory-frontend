@@ -15,9 +15,5 @@ export const isMobile = () => {
     const tablet  = window.matchMedia( TABLET );
     const desktop = window.matchMedia( DESKTOP );
 
-    if ( !tablet.matches && !desktop.matches) {
-        return true;
-    }
-
-    return false
+    return !tablet.matches && !desktop.matches 
 }

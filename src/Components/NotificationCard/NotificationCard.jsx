@@ -1,13 +1,14 @@
 import React, { useEffect, useRef } from 'react';
+import classnames from 'classnames';
 
 import style from './style.module.css';
 
-const NotificationCard = () => {
+const NotificationCard = ( { userType } ) => {
     return (
-        <div className={style.wrap}>
-            <div className={style.header}>
+        <div className={classnames(style.wrap, {[style.contact]: userType === 'contact'})}>
+         { userType !== 'contact' && (<div className={style.header}>
                 <p id='montserrat'> Great! Thanks For Submitting Your Details.</p>
-            </div>
+            </div>)}
             <div className={style.defaultWrap}>
                 <div className={style.redBorder}>
                     <p id='montserrat'> You'll receive details to the email you entered shortly. </p>

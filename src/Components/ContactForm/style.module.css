@@ -1,0 +1,10 @@
+.formFocused {
+    min-width: 80vw !important;
+}
+
+
+@media only screen and (max-device-width: 724px) {
+    .contactFormWrap {
+        margin: 1em 0em;
+    }
+}

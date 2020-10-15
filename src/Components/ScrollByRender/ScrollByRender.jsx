@@ -1,32 +1,40 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-
-const ScrollByRender = ( { children, startOn=0.10 } ) => {
+const ScrollByRender = ( { children } ) => {
     const [ scrolled, setScrolled ] = useState(false);
     const childRef = useRef(null);
 
 
-
-    const handleScroll = (e) => {
-        const { top,  bottom, height } = childRef.current.getBoundingClientRect();
-        const startScrollOn = (startOn * height);
-        // console.log(top, height, bottom);
-        if ( top <= startScrollOn ) {
+    const handleIntersection = ( e ) => {
+        try {
+            if ( !scrolled ) {
+                e[0].isIntersecting && setScrolled(true);
+            }
+        } catch {
             setScrolled(true);
         }
+
     }
 
     useEffect( () => {
-        window.addEventListener('scroll', handleScroll);
-
-
-        return () => window.removeEventListener('scroll', handleScroll);
+        const intersectionObserverOptions = {
+            root: null,
+            threshold: 1
+        };
+        const observer = new IntersectionObserver(
+            handleIntersection, 
+            intersectionObserverOptions
+        );
+        const { current: ref } = childRef
+        ref && observer.observe( ref );
     }, [])
 
 
     return (
-        <div ref={childRef} style={{height: '500px', border: `5px solid ${ scrolled ? 'red' : '' }`}}>
-           { scrolled ? <p>ELEMENT HAS BEEN RENDERED</p> : <p>ELEMENT HAS NOT BEEN RENDERED</p> }
+        <div ref={childRef}>
+           {
+               scrolled && children
+           }
         </div>
     );
 }

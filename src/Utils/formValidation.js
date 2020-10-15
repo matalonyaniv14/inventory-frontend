@@ -2,8 +2,8 @@ import { toSentenceCase } from "./utils";
 
 const EMAIL_REGEX = /\S+@\S+\.\S+/;
 const STR_REGEX = /[0-9]/;
-const ISR_PHONE_REGEX = /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/;
-
+// const ISR_PHONE_REGEX = /^((\+972|972)|0)( |-)?([1-468-9]( |-)?\d{7}|(5|7)[0-9]( |-)?\d{7})$/;
+const INT_PHONE_REGEX = /^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$/
 
 const formatMessage = ( valid, key ) => {
     const [ type, message ] = valid ?  ['success', 'valid'] : ['error', 'invalid']
@@ -25,7 +25,7 @@ const validContactMe = ( str ) => typeof str === 'boolean' && str.toString() ===
 
 const validNumberofBedrooms = ( str ) => !validText( str ) && parseInt(str, 10) > 0;
 
-const validTelephone = ( str ) =>  !validText( str ) && ISR_PHONE_REGEX.test( str );
+const validTelephone = ( str ) =>  !validText( str ) && INT_PHONE_REGEX.test( str );
 
 
 

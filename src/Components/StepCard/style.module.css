@@ -112,3 +112,22 @@
     color: #736180;
 }
 /* DOCUMENTATION */
+
+
+@media only screen and (min-width: 1400px) {
+    .stepWrap, .stepContent{
+         font-size: 20px !important;
+     }
+
+    }
+    
+    
+@media only screen and (max-device-width: 724px) {
+    .stepWrap {
+        margin-bottom: 2em !important;
+        max-height: 6em;
+        min-height: 6em;
+    }
+  }
+  
+  

@@ -29,6 +29,9 @@
     margin-left: 1.5em;
     font-weight: 700 !important;
     padding: .4em 0 0 0;
+    width: auto;
+    margin: 0 auto;
+    word-break: break-all;
 }
 
 svg {
@@ -43,4 +46,25 @@ svg {
 .error .notifySquare {
     background-color: var(--error);
 }
+
+@media only screen and (min-width: 1400px) {
+    .defaultWrap  .mainText {
+        font-size: 16px !important;
+    }
+}
+  
+@media only screen and (max-device-width: 1030px) {
+    .defaultWrap {
+        padding: .2em 1em;
+    }
+
+    .notifySquare {
+        padding: 0.05em 0.2em;
+    }
+    .mainText {
+        font-size: 9px !important;
+    }
+}
+   
+
 

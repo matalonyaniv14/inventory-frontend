@@ -49,3 +49,21 @@
     font-weight: 700;
     transform: rotate(180deg);
 }
+
+@media only screen and (min-width: 1400px) {
+    .defaultWrap {
+        font-size: 20px !important;
+     }     
+}
+
+@media only screen and (max-device-width: 724px) {
+    .defaultWrap {
+        font-size: 18px !important;
+        padding-bottom: 3em;
+        width: unset;
+     }
+
+     .defaultWrap .question p {
+         font-size: 14px;
+     }
+}

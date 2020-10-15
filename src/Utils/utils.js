@@ -2,6 +2,8 @@ const SENTENCE_REGEX = /([A-Z]+)*([A-Z][a-z])/g;
 const WORD_REGEX = /[A-Z]/g;
 const SNAKE_CASE_REGEX = /[.\-_\s]/g;
 
+export const take = ( e ) => document.querySelector( e );
+
 export const formatID = ( id ) => id.toLowerCase().split(' ').join('-');
 
 export const formatRowStyle =  ( rowCount ) => { 

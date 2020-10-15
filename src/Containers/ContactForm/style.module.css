@@ -23,24 +23,23 @@
 .formFocused {
     min-width: 90%;
 }
-/* 
+
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
-} */
+}
 
-.defaultWrap .container {
-    justify-content: none !important;
-    background-color: blue !important
+
+
+.defaultWrap  input:not([type="checkbox"]){
+    height: 2.5em !important;
 }
 
 
 @media only screen and (max-device-width: 724px) {
-    .defaultWrap {
-        position: fixed;
-        top: 10%;
-        left: 0 !important;
-        right: 0 !important;
+    .submit {
+        display: inline !important;
     }
 }
    
+

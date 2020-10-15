@@ -3,6 +3,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat');
 
+/* 
+input {
+    font-size: 16px !important;
+} */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
 #raleway {
     font-family: Raleway;
     font-style: normal;
@@ -231,13 +241,177 @@
     display: flex;
     justify-content: space-between;
 }
-
-
-
-/* 
-.wwmriCtaWrap {
-    width: 50%;
-} */
-
-
 /* what-will-my-report-include */
+
+/* countries */
+.countriesWrap {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 2em 4em;
+}
+
+.countriesTitle {
+    display: flex;
+    width: 85%;
+    margin: 0 auto 4em auto;
+    text-align: left;
+    justify-content: space-between;
+}
+
+.countriesHeader {
+    max-width: 35em;
+}
+
+.countriesSubHeader {
+    width: 20em;
+    line-height: 1.5em;
+}
+
+/* countries */
+
+/*  reviews*/
+.reviewWrap {
+    height: auto;
+    width: 100%;
+    display: flex;
+}
+
+.reviewLeft {
+    min-width: 50%;
+    background-color: var(--orange);
+    transition: all .25s;
+    padding: 3em 0px;
+}
+
+.contactFormTitle {
+    text-align: center;
+}
+
+.reviewRight {
+    min-width: 50%;
+    background-color: #FFFFFF;
+    padding: 5em 0;
+}
+
+.reviewLeft .contactFormWrap {
+    max-width: 100%;
+    height: 100%;
+    margin: 1em 2em;
+}
+
+.reviewLeft .contactFormFooter {
+    text-align: center;
+}
+
+.reviewLeft .contactFormFooter div {
+    margin: 1em;
+}
+
+.reviews {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+/*  reviews*/
+
+
+@media only screen and (min-width: 1400px) {
+    .countriesTitle{
+        width: 80% !important;
+        margin: 6em auto 8em auto;
+    }
+
+    .countriesSubHeader {
+        line-height: 2.5em;
+        width: 28em;
+    }
+
+     .wtbd-wrap > div {
+        margin: 4em 0;
+    }     
+}
+   
+@media only screen and (max-device-width: 1030px) {
+    .reviewWrap {
+        overflow: hidden;
+    }
+
+    .reviewRight {
+        width: 50%;
+        min-width: unset;
+        background-color: #FFFFFF;
+        padding: 5em 2em;
+    }
+
+    .wwmriCtaWrap {
+        padding-top: .2em;
+    }
+
+    .wwmriCtaWrap p {
+        font-size: 12px !important;
+    }
+}
+   
+
+@media only screen and (max-device-width: 724px) {
+    .banner .bannerRight {
+        display: none;
+    }
+
+    .banner .bannerLeft {
+        width: 100%;
+    }
+
+    .wtbd-wrap {
+        width: 100%;
+    }
+
+    .wtbd-wrap .pageTitle {
+        padding: 0em 2em;
+    }
+
+    .hdtwWrap .faqModal {
+        width: 95% !important;
+    }
+
+    .faqSample .faqSampleFaq > div {
+        justify-content: unset !important;
+    }
+
+    .countriesTitle {
+        margin: unset;
+        display: unset;
+        width: 100%;
+
+    }
+
+    .countriesHeader {
+        margin: 0 0 1em 0;
+    }
+
+    .countriesSubHeader {
+        width: unset;
+    }
+
+    .reviewWrap {
+        flex-direction: column;
+        margin-bottom: 3em;
+    }
+
+    .reviewWrap .reviewRight {
+        width: 100%;
+        padding: unset;
+    }
+
+    .reviewWrap .reviews {
+        margin: 1em 3em 0 3em;
+    }
+
+    .contactFormTitle {
+        margin-bottom: 2em;
+    }
+
+}
