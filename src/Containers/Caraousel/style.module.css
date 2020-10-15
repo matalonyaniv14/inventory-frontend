@@ -1,0 +1,46 @@
+.defaultWrap {
+    /* margin: 0px 20%; */
+    /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+    animation: floatLeft .5s ;
+}
+
+.navWrap {
+    display: flex;
+}
+
+.navigationCircles {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    padding-top: 1em;
+}
+
+.circle {
+    width: 0.75em;
+    height: .75em;
+    background-color: var(--grey);
+    border-radius: 50%;
+}
+
+.active {
+    background-color: black !important;
+}
+
+.navWrap svg {
+    font-size: 3em;
+    color: black;
+}
+
+.disable svg{
+    color: var(--grey);
+}
+
+@keyframes floatLeft {
+    from {
+        margin-left: 1000px;
+    }
+
+    to {
+        margin-left: 0px;
+    }
+}

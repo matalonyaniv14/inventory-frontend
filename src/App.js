@@ -25,6 +25,7 @@ import Layout from './Components/Layout/Layout';
 import ScrollByRender from './Components/ScrollByRender/ScrollByRender';
 import { isMobile, isTablet } from './Utils/matchDevice';
 import Alert from './Components/Alert/Alert';
+import Carousel from './Containers/Caraousel/Caraousel';
 
 export const q = [
   {
@@ -104,8 +105,8 @@ function App(props) {
     <div className="App" style={{overflow: 'hidden'}}>
        <Navbar />
        {/* banner */}
+
          <div className="banner">
-           
            <div className="bannerLeft">
               <div className="bannerLeftContent">
                 <div className="contentTitle">
@@ -129,8 +130,12 @@ function App(props) {
 
            </div>
          </div>
+
          {/* banner */}
+
+
          {/* whats-the-big-deal */}
+
           <div className="wtbd-wrap">
             <div id='bigDealAnchor' className="pageTitle">
               <div className="header">
@@ -174,8 +179,12 @@ function App(props) {
               </div>
             </div>
           </div>
+
          {/* whats-the-big-deal */}
+
+
          {/* how-does-this-work */}
+
           <div className="hdtwWrap">
             <div>
               <div id='hdtwAnchor' className="hdtwTitle">
@@ -184,11 +193,38 @@ function App(props) {
                 </Text>
               </div>
               <div className="hdtwSteps">
-                <ResponsiveList 
-                  rows={3} 
-                  items={steps} 
-                  render={ ( data, key ) => <StepCard key={key} id={key} {...data} /> }
-                />
+              {
+                isMobile() ? (
+                  <ScrollByRender>
+                    <Carousel component='StepCard'>
+                      <ResponsiveList 
+                        rows={3} 
+                        items={steps} 
+                        render={ ( data, key ) => (
+                          <StepCard 
+                            key={key} 
+                            id={key} 
+                            {...data} 
+                          />
+                        )}
+                      />
+                    </Carousel>
+                  </ScrollByRender>
+                )          : (
+                  <ResponsiveList 
+                        rows={3} 
+                        items={steps} 
+                        render={ ( data, key ) => (
+                          <StepCard 
+                            key={key} 
+                            id={key} 
+                            {...data} 
+                          />
+                        )}
+                    />
+                )
+              }
+
               </div>
             </div>
             <div className="faqSample">
@@ -216,10 +252,12 @@ function App(props) {
               </div>
             </div>
           </div>
-      
+
          {/* how-does-this-work */}
+
+
          {/* what-will-my-report-include */}
-         {/* <Layout> */}
+
           <div className="wwmriWrap">
               <div className="banner">
                 <div className="bannerLeft">
@@ -328,7 +366,10 @@ function App(props) {
             </div>
          {/* </Layout> */}
          {/* what-will-my-report-include */}
+
+
          {/* countries */}
+
          <Layout>
           <div className="countriesWrap">
               <div className="countriesTitle">
@@ -355,7 +396,10 @@ function App(props) {
               </div>
             </div>
          </Layout>
+
          {/* countries */}
+
+
          {/*  reviews*/}
    
             <div className="reviewWrap">
@@ -371,6 +415,7 @@ function App(props) {
                 </div>
               </div>
             </div>
+
          {/*  reviews*/}
        <Footer />
     </div>

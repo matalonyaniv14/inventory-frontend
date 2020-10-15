@@ -8,7 +8,7 @@ const STEPS = [ 'consultation', 'inventory', 'documentation' ]
 
 const StepCard = ( { id, step, title, content } ) => {
     return (
-        <div className={style.stepWrap} id={ style[STEPS[id]] }>
+        <div className={style.stepWrap} id={ style[title.toLowerCase()] }>
             <div className={style.stepHeader} id='montserrat'>
                 <div className={style.stepSquare}>
                     <div className={style.squareTitle}>
