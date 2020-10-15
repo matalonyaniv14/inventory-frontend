@@ -210,7 +210,7 @@ function App(props) {
                       />
                     </Carousel>
                   </ScrollByRender>
-                )          : (
+                )     : (
                   <ResponsiveList 
                         rows={3} 
                         items={steps} 
