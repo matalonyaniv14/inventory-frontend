@@ -129,10 +129,14 @@
 @media only screen and (max-device-width: 724px) {
     #israel {
         flex-direction: column !important;
+        width: unset !important;
     }
 
     #israel .countryFlag img {
         height: 3em !important;
+    }
+    #belgium, #united-kingdom {
+        margin-left: 2.5em !important;
     }
   }
 
