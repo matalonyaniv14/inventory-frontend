@@ -23,11 +23,11 @@ const CountryCard = ( { country, flag, companyCount } ) => {
        }
     }, [ count ])
 
-
+    // isMobile()
 
     if ( isTablet() || isMobile() ) {
         return (
-            <div className={classnames( style.tabletWrap, { [style.mobileWrap]: isMobile()  } )}>
+            <div className={classnames( style.tabletWrap, { [style.mobileWrap]: false })} id={style[formatID(country)]}>
                 <div className={style.countryFlag}>
                     <img src={flag} alt="country flag"/>
                 </div>

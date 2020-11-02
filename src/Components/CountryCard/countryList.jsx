@@ -9,7 +9,7 @@ import unitedKingdom from '../../Assets/images/uk.png';
 import unitedStates from '../../Assets/images/us.png';
 
 
-const countryList = [
+export const countryList = [
     {
         country: 'Austrialia',
         flag: austrialia,
@@ -59,4 +59,35 @@ const countryList = [
 
 ]
 
-export default countryList;
+
+
+
+export const mobileCountryList = [
+    {
+        country: 'Austrialia',
+        flag: austrialia,
+        companyCount: 3019
+    },
+    {
+        country: 'Belgium',
+        flag: belgium,
+        companyCount: 1449
+    },
+    {
+        country: 'Canada',
+        flag: canada,
+        companyCount: 1042
+    },
+    {
+        country: 'France',
+        flag: france,
+        companyCount: 7512
+    },
+    {
+        country: 'Israel',
+        flag: israel,
+        companyCount: 1,
+        focused: true
+    },
+]
+

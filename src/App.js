@@ -8,7 +8,7 @@ import Faq from './Components/Faq/Faq';
 import StepCard from './Components/StepCard/StepCard';
 import Modal from './Components/Modal/Modal';
 import CountryCard from './Components/CountryCard/CountryCard';
-import countryList from './Components/CountryCard/countryList';
+import {countryList, mobileCountryList} from './Components/CountryCard/countryList';
 import Review from './Components/Review/Review';
 import Navbar from './Components/Navbar/Navbar';
 import Form from './Components/Form/Form';
@@ -389,7 +389,7 @@ function App(props) {
                 <ScrollByRender>
                   <ResponsiveList 
                     rows={3} 
-                    items={countryList} 
+                    items={isMobile() ? mobileCountryList : countryList} 
                     render={ ( data, key ) => <CountryCard key={key} { ...data } /> }
                   />
                 </ScrollByRender>
