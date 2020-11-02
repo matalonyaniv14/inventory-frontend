@@ -127,6 +127,10 @@
 
 
 @media only screen and (max-device-width: 724px) {
+    .countriesContent {
+        margin-top: 3em !important;
+    }
+
     #israel {
         flex-direction: column !important;
         width: unset !important;
@@ -136,7 +140,7 @@
         height: 3em !important;
     }
     #belgium, #united-kingdom {
-        margin-left: 2.5em !important;
+        margin-left: unset !important;
     }
   }
 
