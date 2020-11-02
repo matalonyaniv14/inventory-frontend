@@ -127,10 +127,6 @@
 
 
 @media only screen and (max-device-width: 724px) {
-    .countriesContent {
-        margin-top: 3em !important;
-    }
-
     #israel {
         flex-direction: column !important;
         width: unset !important;

@@ -396,6 +396,10 @@ html {
         width: unset;
     }
 
+    .countriesContent {
+        margin-top: 3em;
+    }
+    
     .reviewWrap {
         flex-direction: column;
         margin-bottom: 3em;
